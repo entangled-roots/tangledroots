@@ -2,7 +2,7 @@
 .leaflet-control-geocoder-results {
     position: absolute;
     z-index: 1000; /* Ensure it stays on top of other map elements */
-    max-height: 200px; /* Limit the height for large results */
+    max-height: 100px; /* Limit the height for large results */
     overflow-y: auto; /* Add scroll if there are too many suggestions */
     background-color: white; /* Clean white background */
     border: 1px solid #ccc; /* Add a subtle border */
