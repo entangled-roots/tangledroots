@@ -1,0 +1,33 @@
+/* Style the dropdown container */
+.leaflet-control-geocoder-results {
+    position: absolute;
+    z-index: 1000; /* Ensure it stays on top of other map elements */
+    max-height: 200px; /* Limit the height for large results */
+    overflow-y: auto; /* Add scroll if there are too many suggestions */
+    background-color: white; /* Clean white background */
+    border: 1px solid #ccc; /* Add a subtle border */
+    border-radius: 5px; /* Rounded corners for a smoother look */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+    padding: 5px; /* Space between the edge and the suggestions */
+}
+
+/* Style individual suggestion items */
+.leaflet-control-geocoder-result {
+    padding: 10px; /* Space around each suggestion */
+    font-size: 14px; /* Readable font size */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    background-color: white; /* Default background for items */
+    color: #333; /* Text color */
+    border-bottom: 1px solid #eee; /* Add a divider between suggestions */
+}
+
+/* Highlight suggestion on hover */
+.leaflet-control-geocoder-result:hover {
+    background-color: #b5efd5; /* Light gray background on hover */
+    color: #007bff; /* Add a highlight color */
+}
+
+/* Remove the last border for the last suggestion */
+.leaflet-control-geocoder-result:last-child {
+    border-bottom: none;
+}
