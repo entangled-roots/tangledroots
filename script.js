@@ -10,7 +10,7 @@ L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r
 
 // Add a marker (existing functionality)
 L.marker([51.4545, -2.5879]).addTo(map)
-    .bindPopup('Howdy !<br> Community spot.')
+    .bindPopup('Howdy default!<br> Community spot.')
     .openPopup();
 
 // Define custom icons for categories
