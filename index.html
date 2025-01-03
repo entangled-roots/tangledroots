@@ -10,6 +10,15 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+		<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+		<script src="https://unpkg.com/leaflet-control-geocoder"></script>
+		<style>
+    	#map {
+        height: 80vh; /* Map height: 80% of viewport */
+        width: 100%;  /* Full-width map */
+    	}
+		</style>
 	</head>
 	<body class="is-preload">
 
@@ -60,11 +69,21 @@
 							</section>
 							
 							<!-- One -->
-							<section id="map" style="width: 100%; background-color: #d9f1c2; padding: 20px 0;">
+							<!--section id="map" style="width: 100%; background-color: #d9f1c2; padding: 20px 0;">
 								<div class="container" style="width: 80%; margin: 0 auto;">
 									<iframe src="https://www.google.com/maps/d/u/0/embed?mid=1_0dBJi79H6jBgQxky5mOnUwR0JPGOd4&ehbc=2E312F&noprof=1" width="640" height="480"></iframe>
 								</div>
+							</section-->
+
+							<!-- Section for Roots Community Map -->
+							<section id="map">
+								<header class="major">
+									<h2>Roots Community Map</h2>
+								</header>
+								<p>Explore the map to find and connect with communities nearby.</p>
+								<div id="map"></div> <!-- The map will render here -->
 							</section>
+
 
 						<!-- Two -->
 							<section id="two">
@@ -456,6 +475,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script src="script.js"></script>
 
 	</body>
 </html>
