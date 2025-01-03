@@ -15,7 +15,7 @@ L.marker([51.4545, -2.5879]).addTo(map)
 
 // Define custom icons for categories
 const foragingIcon = L.icon({
-    iconUrl: 'foraging.png', // Replace with your park icon file path
+    iconUrl: 'images/foraging.png', 
     iconSize: [25, 41],
     iconAnchor: [12, 41],
     popupAnchor: [1, -34],
@@ -23,7 +23,15 @@ const foragingIcon = L.icon({
 });
 
 const growingIcon = L.icon({
-    iconUrl: 'growing.png', // Replace with your museum icon file path
+    iconUrl: 'images/growing.png', 
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+    shadowSize: [41, 41]
+});
+
+const herbIcon = L.icon({
+    iconUrl: 'images/herb.png', 
     iconSize: [25, 41],
     iconAnchor: [12, 41],
     popupAnchor: [1, -34],
@@ -34,7 +42,7 @@ const growingIcon = L.icon({
 function getCategoryIcon(category) {
     if (category === 'Foraging') return foragingIcon;
     if (category === 'Growing') return growingIcon;
-    return L.icon({ iconUrl: 'herb.png', iconSize: [25, 41] }); // Default icon
+    return L.icon({ iconUrl: 'images/herb.png', iconSize: [25, 41] }); // Default icon
 }
 
 // Add the search bar
