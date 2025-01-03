@@ -16,7 +16,7 @@ L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.{e
 //}).addTo(map);
 
 // Add a marker
-L.marker([51.505, -0.09]).addTo(map)
+L.marker([51.4545, -2.5879]).addTo(map)
     .bindPopup('Hello, holly!<br>This is practice.')
     .openPopup();
 
