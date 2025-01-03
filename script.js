@@ -68,20 +68,33 @@ L.Control.geocoder({
 .addTo(map);
 
 // Load data from CSV and add markers dynamically
-Papa.parse('roots_community_locations.csv', {
+Papa.parse('./roots_community_locations.csv', {
     download: true,
     header: true,
     complete: function(results) {
+        // Log the parsed data to verify CSV content
+        console.log('Parsed Data:', results.data);
+
         results.data.forEach(row => {
+            console.log('Processing Row:', row); // Log each row to verify its content
+
             const lat = parseFloat(row.Latitude);
             const lng = parseFloat(row.Longitude);
             const category = row.Category;
             const description = row.Description;
 
-            // Add a marker for each location
-            L.marker([lat, lng], { icon: getCategoryIcon(category) })
-                .addTo(map)
-                .bindPopup(`<b>${description}</b><br>${category}`);
+            // Check if latitude and longitude are valid
+            if (isNaN(lat) || isNaN(lng)) {
+                console.error('Invalid lat/lng:', row); // Log invalid rows
+            } else {
+                console.log('Valid lat/lng:', lat, lng); // Log valid lat/lng
+
+                // Add a marker for each location
+                L.marker([lat, lng], { icon: getCategoryIcon(category) })
+                    .addTo(map)
+                    .bindPopup(`<b>${description}</b><br>${category}`);
+            }
         });
     }
 });
+
