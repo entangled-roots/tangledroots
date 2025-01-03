@@ -9,7 +9,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 // Add a marker
 L.marker([51.505, -0.09]).addTo(map)
-    .bindPopup('Hello, world!<br>This is a test marker.')
+    .bindPopup('Hello, holly!<br>This is practice.')
     .openPopup();
 
 // Add the search bar
