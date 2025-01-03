@@ -16,7 +16,7 @@ L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r
 
 // Add a marker
 L.marker([51.4545, -2.5879]).addTo(map)
-    .bindPopup('Hello, !<br>This is practice.')
+    .bindPopup('Hello, !<br> Community spot.')
     .openPopup();
 
 // Add the search bar
