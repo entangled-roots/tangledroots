@@ -11,3 +11,19 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 L.marker([51.505, -0.09]).addTo(map)
     .bindPopup('Hello, world!<br>This is a test marker.')
     .openPopup();
+
+// Add the search bar
+L.Control.geocoder({
+    defaultMarkGeocode: false // Prevent default marker placement
+})
+.on('markgeocode', function(event) {
+    const bbox = event.geocode.bbox;
+    const poly = L.polygon([
+        bbox.getSouthEast(),
+        bbox.getNorthEast(),
+        bbox.getNorthWest(),
+        bbox.getSouthWest()
+    ]);
+    map.fitBounds(poly.getBounds());
+})
+.addTo(map);
