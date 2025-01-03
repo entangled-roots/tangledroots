@@ -68,7 +68,7 @@ L.Control.geocoder({
 .addTo(map);
 
 // Load data from CSV and add markers dynamically
-Papa.parse('./roots_community_locations.csv', {
+Papa.parse('./locations_with_coords.csv', {
     download: true,
     header: true,
     complete: function(results) {
