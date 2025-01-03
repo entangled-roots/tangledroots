@@ -3,7 +3,7 @@
     display: block;
     position: absolute;
     z-index: 1000;
-    max-height: 200px; /* Prevent dropdown from becoming too large */
+    max-height: 50px; /* Prevent dropdown from becoming too large */
     overflow-y: auto; /* Add scrollbar if needed */
     background-color: white;
     border: 1px solid #ccc;
