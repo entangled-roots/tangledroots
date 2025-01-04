@@ -8,12 +8,6 @@ L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r
     maxZoom: 19
 }).addTo(map);
 
-// Add a marker (existing functionality)
-//L.marker([51.4545, -2.5879]).addTo(map)
- //   .bindPopup('Howdy default!<br> Community spot.')
- //   .openPopup();
-
-
 // Define custom icons for categories
 const foragingIcon = L.icon({
     iconUrl: 'images/foraging.png', 
@@ -51,14 +45,37 @@ L.Control.geocoder({
     geocoder: new L.Control.Geocoder.Nominatim({
         geocodingQueryParams: {
             countrycodes: "gb", // Restrict suggestions to the United Kingdom
-            limit: 4 // Limit suggestions to 5
+            limit: 4 // Limit suggestions
         }
     }),
     defaultMarkGeocode: false // Prevent default marker placement
 })
+.on('results', function (event) {
+    console.log('Geocoder Results:', event.results); // Log all results
+
+    event.results.forEach(result => {
+        console.log('Raw Suggestion:', result.name); // Log each suggestion
+
+        // Skip results not in the UK
+        if (!/United Kingdom|England|Scotland|Wales|Northern Ireland|[A-Z]{1,2}\d{1,2}/i.test(result.name)) {
+            console.log('Skipped Result:', result.name); // Log skipped non-UK results
+            return;
+        }
+
+        console.log('UK Suggestion:', result.name);
+
+        result.name = result.name
+            .replace(/,\s*\b(?:United Kingdom|England|Scotland|Wales|Northern Ireland|GB|UK)\b/i, '') // Remove "United Kingdom"
+            .replace(/\r?\n|\r/g, ' ') // Replace newlines with a space
+            .replace(/\s+/g, ' ') // Collapse multiple spaces into one
+            .trim();
+
+        console.log('Filtered Suggestion:', result.name);
+    });
+})
 .on('markgeocode', function(event) {
     const result = event.geocode;
-    
+
     const filteredName = result.name
         .replace(/\s*,?\s*\b(?:United Kingdom|England|Scotland|Wales|Northern Ireland|GB|UK)\b\s*,?/gi, '')
         // Remove trailing administrative regions (anything after the last comma)
@@ -67,41 +84,11 @@ L.Control.geocoder({
 
     console.log('Filtered Name:', filteredName);
 
-    // Optionally add a marker or polygon with the filtered result
-    const poly = L.polygon([
-        result.bbox.getSouthEast(),
-        result.bbox.getNorthEast(),
-        result.bbox.getNorthWest(),
-        result.bbox.getSouthWest()
-    ]);
-    
-    map.fitBounds(poly.getBounds()); // Adjust map to fit the result
 
+
+    map.fitBounds(result.bbox); // Adjust map to fit the result
 })
-.on('geocoder_showresult', function (event) {
-    console.log('Raw Suggestion:', event.text); // Log all suggestions
-
-    const result = event.text;
-
-    // Skip results not in the UK
-    if (!/United Kingdom|England|Scotland|Wales|Northern Ireland|[A-Z]{1,2}\d{1,2}/i.test(result)) {
-        console.log('Skipped Result:', result); // Log skipped non-UK results
-        return; // Prevent the result from being shown
-    }
-
-    console.log('UK Suggestion:', result);
-
-    event.text = result
-        .replace(/,\s*\b(?:United Kingdom|England|Scotland|Wales|Northern Ireland|GB|UK)\b/i, '') // Remove "United Kingdom"
-        .replace(/\r?\n|\r/g, ' ') // Replace newlines with a space
-        .replace(/\s+/g, ' ') // Collapse multiple spaces into one
-        .trim();
-
-    console.log('Filtered Suggestion:', event.text);
-})
-
-.addTo(map)
-
+.addTo(map);
 
 // Load data from CSV and add markers dynamically
 Papa.parse('./locations_with_coords.csv', {
@@ -133,4 +120,3 @@ Papa.parse('./locations_with_coords.csv', {
         });
     }
 });
-
