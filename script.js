@@ -59,10 +59,11 @@ L.Control.geocoder({
 .on('markgeocode', function(event) {
     const result = event.geocode;
     
-    // Remove country from the result name
-    const filteredName = result.name.replace(/,\s*\b(?:United Kingdom|England|Scotland|Wales|GB|UK)\b/i, '').trim();
+    const filteredName = result.name
+        .replace(/,\s*\b(?:United Kingdom|England|Scotland|Wales|GB|UK)\b/i, '') // Remove country
+        .replace(/,\s*[^,]*$/i, '') // Remove trailing administrative regions
+        .trim();
 
-    // Log the filtered name to verify
     console.log('Filtered Name:', filteredName);
 
     // Optionally add a marker or polygon with the filtered result
