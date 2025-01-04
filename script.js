@@ -60,8 +60,9 @@ L.Control.geocoder({
     const result = event.geocode;
     
     const filteredName = result.name
-        .replace(/,\s*\b(?:United Kingdom|England|Scotland|Wales|GB|UK)\b/i, '') // Remove country
-        .replace(/,\s*[^,]*$/i, '') // Remove trailing administrative regions
+        .replace(/\s*,?\s*\b(?:United Kingdom|England|Scotland|Wales|Northern Ireland|GB|UK)\b\s*,?/gi, '')
+        // Remove trailing administrative regions (anything after the last comma)
+        .replace(/,\s*[^,]*$/i, '')
         .trim();
 
     console.log('Filtered Name:', filteredName);
