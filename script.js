@@ -50,6 +50,7 @@ function getCategoryIcon(category) {
 L.Control.geocoder({
     geocoder: new L.Control.Geocoder.Nominatim({
         geocodingQueryParams: {
+            countrycodes: "gb", // Restrict suggestions to the United Kingdom
             limit: 4 // Limit suggestions to 5
         }
     }),
