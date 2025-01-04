@@ -78,7 +78,11 @@ L.Control.geocoder({
         .bindPopup(`<b>${filteredName}</b>`)
         .openPopup();
 })
-.addTo(map);
+.on('geocoder_showresult', function (event) {
+    const resultElement = event.text.replace(/,\s*\b(?:United Kingdom|England|Scotland|Wales|GB|UK)\b/i, '').trim();
+    event.text = resultElement;
+})
+.addTo(map)
 
 
 // Load data from CSV and add markers dynamically
