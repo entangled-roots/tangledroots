@@ -75,14 +75,20 @@ L.Control.geocoder({
     
     map.fitBounds(poly.getBounds()); // Adjust map to fit the result
 
-   // L.marker(result.center).addTo(map)
-    //    .bindPopup(`<b>${filteredName}</b>`)
-     //   .openPopup();
 })
 .on('geocoder_showresult', function (event) {
-    const resultElement = event.text.replace(/,\s*\b(?:United Kingdom|England|Scotland|Wales|GB|UK)\b/i, '').trim();
-    event.text = resultElement;
+    const result = event.text;
+
+    // Skip results not in the UK
+    if (!/United Kingdom|England|Scotland|Wales|Northern Ireland/i.test(result)) {
+        console.log('Skipped Result:', result); // Log skipped non-UK results
+        return false; // Prevent the result from being shown
+    }
+
+    // Remove the country name from valid UK results
+    event.text = result.replace(/,\s*\b(?:United Kingdom|England|Scotland|Wales|GB|UK)\b/i, '').trim();
 })
+
 .addTo(map)
 
 
