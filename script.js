@@ -88,7 +88,10 @@ L.Control.geocoder({
     }
 
     // Remove the country name from valid UK results
-    event.text = result.replace(/,\s*\b(?:United Kingdom|England|Scotland|Wales|GB|UK)\b/i, '').trim();
+    event.text = result.replace(/\s*,?\s*\b(?:United Kingdom|England|Scotland|Wales|Northern Ireland|GB|UK)\b\s*,?/gi, '')
+    .replace(/,\s*[^,]*$/i, '')
+    .trim();
+
 })
 
 .addTo(map)
