@@ -74,9 +74,9 @@ L.Control.geocoder({
     
     map.fitBounds(poly.getBounds()); // Adjust map to fit the result
 
-    L.marker(result.center).addTo(map)
-        .bindPopup(`<b>${filteredName}</b>`)
-        .openPopup();
+   // L.marker(result.center).addTo(map)
+    //    .bindPopup(`<b>${filteredName}</b>`)
+     //   .openPopup();
 })
 .on('geocoder_showresult', function (event) {
     const resultElement = event.text.replace(/,\s*\b(?:United Kingdom|England|Scotland|Wales|GB|UK)\b/i, '').trim();
