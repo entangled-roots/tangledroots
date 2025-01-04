@@ -13,6 +13,7 @@ L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r
  //   .bindPopup('Howdy default!<br> Community spot.')
  //   .openPopup();
 
+
 // Define custom icons for categories
 const foragingIcon = L.icon({
     iconUrl: 'images/foraging.png', 
@@ -49,23 +50,36 @@ function getCategoryIcon(category) {
 L.Control.geocoder({
     geocoder: new L.Control.Geocoder.Nominatim({
         geocodingQueryParams: {
-            countrycodes: "gb", // Restrict to the UK
             limit: 4 // Limit suggestions to 5
         }
     }),
     defaultMarkGeocode: false // Prevent default marker placement
 })
 .on('markgeocode', function(event) {
-    const bbox = event.geocode.bbox;
+    const result = event.geocode;
+    
+    // Remove country from the result name
+    const filteredName = result.name.replace(/,\s*\b(?:United Kingdom|England|Scotland|Wales|GB|UK)\b/i, '').trim();
+
+    // Log the filtered name to verify
+    console.log('Filtered Name:', filteredName);
+
+    // Optionally add a marker or polygon with the filtered result
     const poly = L.polygon([
-        bbox.getSouthEast(),
-        bbox.getNorthEast(),
-        bbox.getNorthWest(),
-        bbox.getSouthWest()
+        result.bbox.getSouthEast(),
+        result.bbox.getNorthEast(),
+        result.bbox.getNorthWest(),
+        result.bbox.getSouthWest()
     ]);
+    
     map.fitBounds(poly.getBounds()); // Adjust map to fit the result
+
+    L.marker(result.center).addTo(map)
+        .bindPopup(`<b>${filteredName}</b>`)
+        .openPopup();
 })
 .addTo(map);
+
 
 // Load data from CSV and add markers dynamically
 Papa.parse('./locations_with_coords.csv', {
