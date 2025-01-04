@@ -87,10 +87,13 @@ L.Control.geocoder({
         return false; // Prevent the result from being shown
     }
 
-    // Remove the country name from valid UK results
-    event.text = result.replace(/\s*,?\s*\b(?:United Kingdom|England|Scotland|Wales|Northern Ireland|GB|UK)\b\s*,?/gi, '')
-    .replace(/,\s*[^,]*$/i, '')
-    .trim();
+    event.text = event.text
+        .replace(/,\s*\b(?:United Kingdom|England|Scotland|Wales|Northern Ireland|GB|UK)\b/i, '') // Remove "United Kingdom"
+        .replace(/\r?\n|\r/g, ' ') // Replace newlines with a space
+        .replace(/\s+/g, ' ') // Collapse multiple spaces into one
+        .trim();
+
+    console.log('Filtered Suggestion:', event.text);
 
 })
 
