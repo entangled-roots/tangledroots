@@ -43,7 +43,7 @@ const herbIcon = L.icon({
 function getCategoryIcon(category) {
     if (category === 'Foraging') return foragingIcon;
     if (category === 'Growing') return growingIcon;
-    return L.icon({ iconUrl: 'images/herb.png', iconSize: [25, 41] }); // Default icon
+    return L.icon({ iconUrl: 'images/herb.png', iconSize: [25, 35] }); // Default icon
 }
 
 // Add the search bar
