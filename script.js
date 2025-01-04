@@ -86,6 +86,8 @@ L.Control.geocoder({
         console.log('Skipped Result:', result); // Log skipped non-UK results
         return; // Prevent the result from being shown
     }
+    
+    console.log('UK Suggestion:', result);
 
     event.text = result
         .replace(/,\s*\b(?:United Kingdom|England|Scotland|Wales|Northern Ireland|GB|UK)\b/i, '') // Remove "United Kingdom"
