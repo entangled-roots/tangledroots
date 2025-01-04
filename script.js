@@ -79,14 +79,16 @@ L.Control.geocoder({
 
 })
 .on('geocoder_showresult', function (event) {
+    console.log('Raw Suggestion:', event.text); // Log all suggestions
+
     const result = event.text;
 
     // Skip results not in the UK
-    if (!/United Kingdom|England|Scotland|Wales|Northern Ireland/i.test(result)) {
+    if (!/United Kingdom|England|Scotland|Wales|Northern Ireland|[A-Z]{1,2}\d{1,2}/i.test(result)) {
         console.log('Skipped Result:', result); // Log skipped non-UK results
         return; // Prevent the result from being shown
     }
-    
+
     console.log('UK Suggestion:', result);
 
     event.text = result
@@ -96,7 +98,6 @@ L.Control.geocoder({
         .trim();
 
     console.log('Filtered Suggestion:', event.text);
-
 })
 
 .addTo(map)
