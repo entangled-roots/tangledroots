@@ -84,10 +84,10 @@ L.Control.geocoder({
     // Skip results not in the UK
     if (!/United Kingdom|England|Scotland|Wales|Northern Ireland/i.test(result)) {
         console.log('Skipped Result:', result); // Log skipped non-UK results
-        return false; // Prevent the result from being shown
+        return; // Prevent the result from being shown
     }
 
-    event.text = event.text
+    event.text = result
         .replace(/,\s*\b(?:United Kingdom|England|Scotland|Wales|Northern Ireland|GB|UK)\b/i, '') // Remove "United Kingdom"
         .replace(/\r?\n|\r/g, ' ') // Replace newlines with a space
         .replace(/\s+/g, ' ') // Collapse multiple spaces into one
