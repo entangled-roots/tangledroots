@@ -17,7 +17,7 @@
     display: flex; /* Use Flexbox for alignment */
     justify-content: space-between; /* Separate city and country names */
     align-items: center; /* Vertically align content */
-    padding: 10px;
+    padding: 5px;
     font-size: 14px;
     font-family: Arial, sans-serif;
     background-color: white;
@@ -28,11 +28,11 @@
 /* Prevent overlapping text */
 .leaflet-control-geocoder-result span {
     display: inline-block;
-    max-width: calc(50% - 10px); /* Adjust width for city and country names */
     overflow: hidden; /* Prevent text overflow */
     white-space: nowrap; /* Keep text on one line */
     text-overflow: ellipsis; /* Add "..." if text overflows */
 }
+
 
 /* Highlight suggestions on hover */
 .leaflet-control-geocoder-result:hover {
