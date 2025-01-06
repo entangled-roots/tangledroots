@@ -2700,7 +2700,7 @@ input, select, textarea {
 		-webkit-justify-content: space-between;
 		-ms-justify-content: space-between;
 		justify-content: space-between;
-		background: #7ea68a;
+		background: #866b8ba1;   /*7ea68a;*/
 		color: #d2f2e9;
 		height: 100%;
 		overflow-y: auto;
