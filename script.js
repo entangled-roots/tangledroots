@@ -105,6 +105,8 @@ Papa.parse('./locations_with_coords.csv', {
             const lng = parseFloat(row.Longitude);
             const category = row.Category;
             const description = row.Description;
+            const name = row.name;
+            const website = row.Website;
 
             // Check if latitude and longitude are valid
             if (isNaN(lat) || isNaN(lng)) {
@@ -115,7 +117,12 @@ Papa.parse('./locations_with_coords.csv', {
                 // Add a marker for each location
                 L.marker([lat, lng], { icon: getCategoryIcon(category) })
                     .addTo(map)
-                    .bindPopup(`<b>${description}</b><br>${category}`);
+                    .bindPopup(`
+                        <b>${communityName}</b><br>
+                        <i>${description}</i><br>
+                        Category: ${category}<br>
+                        <a href="${website}" target="_blank">Visit Website</a>
+                    `);
             }
         });
     }
