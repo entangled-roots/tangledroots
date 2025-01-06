@@ -56,8 +56,9 @@ function addMarker(lat, lng, category, description, communityName, website) {
 
     // Store marker details for later use
     markerDetails.push({ lat, lng, category, description, communityName, website, marker });
-    console.log(markerDetails);  // This will show all markers added so far
+
     // Update the marker info after adding a marker
+    updateMarkerInfo();
 }
 
 // Update the displayed information below the map based on the visible markers within bounds
