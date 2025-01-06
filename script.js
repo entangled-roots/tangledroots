@@ -111,7 +111,7 @@ L.Control.geocoder({
             map.fitBounds(result.bbox); // Adjust map to fit the new search result bounds
             console.log('After fitBounds:', map.getBounds());  // Log the updated map bounds
         } else {
-            console.log('No bounds returned for this search result.');
+            console.log('No bounds returned for this search result hmm.');
         }
 
         // Update the marker info after geocode
