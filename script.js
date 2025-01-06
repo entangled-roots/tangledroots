@@ -106,7 +106,7 @@ L.Control.geocoder({
     event.results.forEach(result => {
         console.log('Search Result Bounds:', result.bbox); // Log the bounds for the search result
 
-        // Make sure the bounds are valid before applying fitBounds
+        // If the bounds are valid, adjust the map to fit the new search result
         if (result.bbox) {
             map.fitBounds(result.bbox); // Adjust map to fit the new search result bounds
             console.log('After fitBounds:', map.getBounds());  // Log the updated map bounds
@@ -117,6 +117,16 @@ L.Control.geocoder({
         // Update the marker info after geocode
         updateMarkerInfo();
     });
+})
+.on('markgeocode', function(event) {
+    // This event triggers when a suggestion is clicked, and it zooms to the clicked location
+    const result = event.geocode;
+    console.log('Clicked geocode result:', result);
+    map.fitBounds(result.bbox); // Fit the map bounds to the clicked location
+    console.log('After clicked geocode fitBounds:', map.getBounds());
+
+    // Update the marker info after geocode
+    updateMarkerInfo();
 })
 .addTo(map);
 
