@@ -105,7 +105,7 @@ Papa.parse('./locations_with_coords.csv', {
             const lng = parseFloat(row.Longitude);
             const category = row.Category;
             const description = row.Description;
-            const communityName = row.name;
+            const communityName = row.Name;
             const website = row.Website;
 
             // Check if latitude and longitude are valid
