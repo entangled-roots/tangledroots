@@ -104,7 +104,11 @@ L.Control.geocoder({
 })
 .on('results', function (event) {
     event.results.forEach(result => {
-        map.fitBounds(result.bbox); // Adjust map to fit the result
+        // This ensures that the map fits the bounds of the new geocode result
+        map.fitBounds(result.bbox); // Adjust map to fit the new search result bounds
+
+        // Log the new bounds to ensure proper map movement
+        console.log('New Map Bounds:', result.bbox);
 
         // Update the marker info after geocode
         updateMarkerInfo();
