@@ -97,8 +97,9 @@
 								<div id="map"></div> <!-- The map will render here -->
 							</section>
 
+						
 
-						<!-- Two -->
+							<!-- Two -->
 							<section id="two">
 								<div class="container">
 									<h3>Add your community to Rooted Community Map</h3>
@@ -107,12 +108,20 @@
 										To do so, fill in the form below. We know sometimes communities do not have fixed addresses, so we ask you make an approximation using the post code, and ideally a
 										street name too which feels relevant. Your addition will not appear immediately on the map - expect to see it in a few days!
 									</p>
-									<ul class="feature-icons">
-										<!--li style="color: #1a1c1e;"><span style="font-weight: bold;">1.</span> Please fill out all of the location related boxes - street, city and post code. We convert these to longtitude and langitude to add to the map. </li-->
-										<li style="color: #1a1c1e;"><span style="font-weight: bold;">1.</span> Choose the most relevant category out of herbalism, foraging and growing.
-										 Send us an email suggesting another category if you don't feel these capture your community. </li>
-									</ul>
-									<form
+									<div style="display: flex; align-items: flex-start; gap: 20px;">
+										<div style="flex: 2;">
+											<ul class="feature-icons">
+												<li style="color: #1a1c1e;">
+													<span style="font-weight: bold;">1.</span> Choose the most relevant category out of herbalism, foraging, and growing.
+													Send us an email suggesting another category if you don't feel these capture your community.
+												</li>
+											</ul>
+										</div>
+										<div style="flex: 1; text-align: center;">
+											<img src="images/add_map.jpg" alt="Map illustration" style="max-width: 100%; height: auto; border-radius: 8px;">
+										</div>
+									</div>
+																<form
 										action="https://formspree.io/f/xeoopgjb"
 										method="POST"
 									>
@@ -121,7 +130,7 @@
 											Community Name:
 											<input type="text" id="community-name" name="Community Name" required>
 										</label>
-							
+
 										<!-- Description -->
 										<label for="description">
 											Description:
@@ -133,19 +142,19 @@
 											Street Name:
 											<input type="text" id="street-name" name="Street Name" required>
 										</label>
-							
+
 										<!-- City -->
 										<label for="city">
 											City:
 											<input type="text" id="city" name="City">
 										</label>
-							
+
 										<!-- Postcode -->
 										<label for="postcode">
 											Postcode:
 											<input type="text" id="postcode" name="Postcode" required>
 										</label>
-							
+
 										<!-- Email Address -->
 										<label for="email">
 											Email Address (optional):
@@ -157,7 +166,7 @@
 											Website (optional):
 											<input type="url" id="website" name="Website">
 										</label>
-							
+
 										<!-- Category -->
 										<label for="category">
 											Category:
@@ -174,7 +183,12 @@
 									</form>
 								</div>
 							</section>
-								
+
+
+
+
+
+						
 
 
 				
