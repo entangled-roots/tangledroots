@@ -40,6 +40,51 @@ function getCategoryIcon(category) {
     return L.icon({ iconUrl: 'images/herb.png', iconSize: [25, 35] }); // Default icon
 }
 
+// Initialize an empty array to store marker data for later display
+let markerDetails = [];
+
+// Function to add a marker and store its details
+function addMarker(lat, lng, category, description, communityName, website) {
+    const marker = L.marker([lat, lng], { icon: getCategoryIcon(category) })
+        .addTo(map)
+        .bindPopup(`
+            <b>${communityName}</b><br>
+            <i>${description}</i><br>
+            Category: ${category}<br>
+            <a href="${website}" target="_blank">Visit Website</a>
+        `);
+
+    // Store marker details for later use
+    markerDetails.push({ lat, lng, category, description, communityName, website, marker });
+}
+
+// Update the displayed information below the map based on the visible markers within bounds
+function updateMarkerInfo() {
+    const bounds = map.getBounds();
+    const filteredMarkers = markerDetails.filter(marker => bounds.contains([marker.lat, marker.lng]));
+
+    // Get the container where the information will be displayed
+    const container = document.getElementById('marker-info-container');
+    container.innerHTML = '';  // Clear existing content
+
+    // Display the filtered markers
+    if (filteredMarkers.length > 0) {
+        filteredMarkers.forEach(marker => {
+            const listItem = document.createElement('div');
+            listItem.style.marginBottom = '10px';
+            listItem.innerHTML = `
+                <b>${marker.communityName}</b><br>
+                <i>${marker.description}</i><br>
+                Category: ${marker.category}<br>
+                <a href="${marker.website}" target="_blank">Visit Website</a>
+            `;
+            container.appendChild(listItem);
+        });
+    } else {
+        container.innerHTML = '<p>No markers found in this area.</p>';
+    }
+}
+
 // Add the search bar
 L.Control.geocoder({
     geocoder: new L.Control.Geocoder.Nominatim({
@@ -51,42 +96,12 @@ L.Control.geocoder({
     defaultMarkGeocode: false // Prevent default marker placement
 })
 .on('results', function (event) {
-    console.log('Geocoder Results:', event.results); // Log all results
-
     event.results.forEach(result => {
-        console.log('Raw Suggestion:', result.name); // Log each suggestion
+        map.fitBounds(result.bbox); // Adjust map to fit the result
 
-        // Skip results not in the UK
-        if (!/United Kingdom|England|Scotland|Wales|Northern Ireland|[A-Z]{1,2}\d{1,2}/i.test(result.name)) {
-            console.log('Skipped Result:', result.name); // Log skipped non-UK results
-            return;
-        }
-
-        console.log('UK Suggestion:', result.name);
-
-        result.name = result.name
-            .replace(/,\s*\b(?:United Kingdom|England|Scotland|Wales|Northern Ireland|GB|UK)\b/i, '') // Remove "United Kingdom"
-            .replace(/\r?\n|\r/g, ' ') // Replace newlines with a space
-            .replace(/\s+/g, ' ') // Collapse multiple spaces into one
-            .trim();
-
-        console.log('Filtered Suggestion:', result.name);
+        // Update the marker info after geocode
+        updateMarkerInfo();
     });
-})
-.on('markgeocode', function(event) {
-    const result = event.geocode;
-
-    const filteredName = result.name
-        .replace(/\s*,?\s*\b(?:United Kingdom|England|Scotland|Wales|Northern Ireland|GB|UK)\b\s*,?/gi, '')
-        // Remove trailing administrative regions (anything after the last comma)
-        .replace(/,\s*[^,]*$/i, '')
-        .trim();
-
-    console.log('Filtered Name:', filteredName);
-
-
-
-    map.fitBounds(result.bbox); // Adjust map to fit the result
 })
 .addTo(map);
 
@@ -95,12 +110,7 @@ Papa.parse('./locations_with_coords.csv', {
     download: true,
     header: true,
     complete: function(results) {
-        // Log the parsed data to verify CSV content
-        console.log('Parsed Data:', results.data);
-
         results.data.forEach(row => {
-            console.log('Processing Row:', row); // Log each row to verify its content
-
             const lat = parseFloat(row.Latitude);
             const lng = parseFloat(row.Longitude);
             const category = row.Category;
@@ -108,21 +118,9 @@ Papa.parse('./locations_with_coords.csv', {
             const communityName = row.Name;
             const website = row.Website;
 
-            // Check if latitude and longitude are valid
-            if (isNaN(lat) || isNaN(lng)) {
-                console.error('Invalid lat/lng:', row); // Log invalid rows
-            } else {
-                console.log('Valid lat/lng:', lat, lng); // Log valid lat/lng
-
-                // Add a marker for each location
-                L.marker([lat, lng], { icon: getCategoryIcon(category) })
-                    .addTo(map)
-                    .bindPopup(`
-                        <b>${communityName}</b><br>
-                        <i>${description}</i><br>
-                        Category: ${category}<br>
-                        <a href="${website}" target="_blank">Visit Website</a>
-                    `);
+            // Only add valid markers to the map
+            if (!isNaN(lat) && !isNaN(lng)) {
+                addMarker(lat, lng, category, description, communityName, website);
             }
         });
     }
