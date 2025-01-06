@@ -88,7 +88,7 @@ function updateMarkerInfo() {
             container.appendChild(listItem);
         });
     } else {
-        container.innerHTML = '<p> No communities have yet been added in this area.</p>';
+        container.innerHTML = '<p> No communities have been added in this area yet.</p>';
     }
 }
 
