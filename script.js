@@ -88,7 +88,6 @@ function updateMarkerInfo() {
             container.appendChild(listItem);
         });
     } else {
-        // Show message when no markers are found in the bounds
         container.innerHTML = '<p>No markers found in this area.</p>';
     }
 }
@@ -105,12 +104,15 @@ L.Control.geocoder({
 })
 .on('results', function (event) {
     event.results.forEach(result => {
-        // Log the new bounds to ensure proper map movement
-        console.log('Search Result Bounds:', result.bbox);
+        console.log('Search Result Bounds:', result.bbox); // Log the bounds for the search result
 
-        // If the bounds are different, adjust the map
-        map.fitBounds(result.bbox); // Adjust map to fit the new search result bounds
-        console.log('After fitBounds:', map.getBounds());  // Log the updated map bounds
+        // Make sure the bounds are valid before applying fitBounds
+        if (result.bbox) {
+            map.fitBounds(result.bbox); // Adjust map to fit the new search result bounds
+            console.log('After fitBounds:', map.getBounds());  // Log the updated map bounds
+        } else {
+            console.log('No bounds returned for this search result.');
+        }
 
         // Update the marker info after geocode
         updateMarkerInfo();
