@@ -64,7 +64,11 @@ function addMarker(lat, lng, category, description, communityName, website) {
 // Update the displayed information below the map based on the visible markers within bounds
 function updateMarkerInfo() {
     const bounds = map.getBounds();
+    console.log('Map Bounds:', bounds);  // Log current map bounds
+
     const filteredMarkers = markerDetails.filter(marker => bounds.contains([marker.lat, marker.lng]));
+
+    console.log('Filtered Markers:', filteredMarkers);  // Log filtered markers to check if they match bounds
 
     // Get the container where the information will be displayed
     const container = document.getElementById('marker-info-container');
@@ -126,5 +130,8 @@ Papa.parse('./locations_with_coords.csv', {
                 addMarker(lat, lng, category, description, communityName, website);
             }
         });
+
+        // Call updateMarkerInfo() to display markers after CSV loading
+        updateMarkerInfo();
     }
 });
