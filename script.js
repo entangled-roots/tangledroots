@@ -104,7 +104,10 @@ L.Control.geocoder({
 })
 .on('results', function (event) {
     event.results.forEach(result => {
-        console.log('Search Result Bounds:', result.bbox); // Log the bounds for the search result
+        console.log('Search Result:', result); // Log the entire result object to check its structure
+        if (result.bbox) {
+            console.log('Search Result Bounds:', result.bbox); // Log the bounds if they exist
+
 
         // If the bounds are valid, adjust the map to fit the new search result
         if (result.bbox) {
