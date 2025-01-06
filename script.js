@@ -107,10 +107,6 @@ L.Control.geocoder({
         console.log('Search Result:', result); // Log the entire result object to check its structure
         if (result.bbox) {
             console.log('Search Result Bounds:', result.bbox); // Log the bounds if they exist
-
-
-        // If the bounds are valid, adjust the map to fit the new search result
-        if (result.bbox) {
             map.fitBounds(result.bbox); // Adjust map to fit the new search result bounds
             console.log('After fitBounds:', map.getBounds());  // Log the updated map bounds
         } else {
