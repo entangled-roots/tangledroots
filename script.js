@@ -56,13 +56,19 @@ function addMarker(lat, lng, category, description, communityName, website) {
 
     // Store marker details for later use
     markerDetails.push({ lat, lng, category, description, communityName, website, marker });
-    console.log(markerDetails);  // This will show all markers added so far
+
+    // Update the marker info after adding a marker
+    updateMarkerInfo();
 }
 
 // Update the displayed information below the map based on the visible markers within bounds
 function updateMarkerInfo() {
     const bounds = map.getBounds();
+    console.log('Map Bounds:', bounds);  // Log current map bounds
+
     const filteredMarkers = markerDetails.filter(marker => bounds.contains([marker.lat, marker.lng]));
+
+    console.log('Filtered Markers:', filteredMarkers);  // Log filtered markers to check if they match bounds
 
     // Get the container where the information will be displayed
     const container = document.getElementById('marker-info-container');
@@ -98,7 +104,11 @@ L.Control.geocoder({
 })
 .on('results', function (event) {
     event.results.forEach(result => {
-        map.fitBounds(result.bbox); // Adjust map to fit the result
+        // This ensures that the map fits the bounds of the new geocode result
+        map.fitBounds(result.bbox); // Adjust map to fit the new search result bounds
+
+        // Log the new bounds to ensure proper map movement
+        console.log('New Map Bounds:', result.bbox);
 
         // Update the marker info after geocode
         updateMarkerInfo();
@@ -124,5 +134,8 @@ Papa.parse('./locations_with_coords.csv', {
                 addMarker(lat, lng, category, description, communityName, website);
             }
         });
+
+        // Call updateMarkerInfo() to display markers after CSV loading
+        updateMarkerInfo();
     }
 });
