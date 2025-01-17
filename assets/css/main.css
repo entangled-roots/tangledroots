@@ -2212,7 +2212,8 @@ input, select, textarea {
 			top: 0;
 			left: 0;
 			width: 100%;
-			height: 100%;
+			height: auto;
+			max-height: 100%;
 			object-fit: cover; /* Ensures the video scales proportionally to fill the header */
 			z-index: -1; /* Places the video behind the content */
 		}
