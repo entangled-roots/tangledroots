@@ -10,9 +10,12 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="search.css">
+		
 		<!-- Leaflet Dependencies -->
 		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 		<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+		
 
 		<!-- Leaflet Control Geocoder -->
 		<link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
@@ -57,6 +60,27 @@
 
 							The aim is to help people easily find communities whether moving to a new city, knowing what’s going on in your current area, or visiting new places.</p>
 					</div>
+					<!-- Add the legend for icons -->
+					<div class="container" style="text-align: center;">
+						<h4>Community types</h4>
+						<p> Look for the following icons on the map to find communities: </p>
+						<div style="display: flex; justify-content: center; gap: 40px; align-items: center;">
+							<!-- Foraging Icon -->
+							<div style="text-align: center;">
+								<img src="images/foraging.png" alt="Foraging Icon" style="width: 40px; height: auto;" />
+								<p>Foraging</p>
+							</div>
+							<!-- Growing Icon -->
+							<div style="text-align: center;">
+								<img src="images/growing.png" alt="Growing Icon" style="width: 40px; height: auto;" />
+								<p>Growing</p>
+							</div>
+							<!-- Herbalism Icon -->
+							<div style="text-align: center;">
+								<img src="images/herb.png" alt="Herbalism Icon" style="width: 40px; height: auto;" />
+								<p>Herbalism</p>
+							</div>
+						</div>
 				</header>
 				<div class="content dark style1 featured">
 					<div class="container">
