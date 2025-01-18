@@ -2315,7 +2315,7 @@ input, select, textarea {
 			}
 
 			.main > .content.style1 {
-				background: url("../../images/leaf.jpg") center center no-repeat;
+				background: url("../../images/leaf_bw.jpg") center center no-repeat;
 				background-size: cover; /* Ensures the image scales to cover the entire element */
 			  }
 			  
@@ -2474,7 +2474,7 @@ input, select, textarea {
 					}
 
 				.main > .content {
-					padding: 3.5em 20px 3.5em 20px;
+					padding: 0.5em 0px 0.5em 0px;
 				}
 
 					.main > .content > .container > :last-child {
