@@ -2223,6 +2223,8 @@ input, select, textarea {
 		#header .header-content {
 			position: relative;
 			z-index: 1; /* Ensures text content is above the video */
+			margin: 0 auto; /* Centers content horizontally */
+			text-align: center; /* Aligns text */
 		}
 
 		/* Header Text Box */
