@@ -2200,6 +2200,7 @@ input, select, textarea {
 			/* background-size: auto, cover; */
 			/* background-position: top left, center center; */
 			/* background-repeat: repeat, no-repeat; */
+			width: 100%;
 			padding: 14em 0; /* Adjust height by changing padding */
 			text-align: center;
 			color: #fff;
@@ -2211,7 +2212,7 @@ input, select, textarea {
 			position: absolute;
 			top: 0;
 			left: 0;
-			width: 80%;
+			width: 100%;
 			height: auto;
 			max-height: 100%;
 			object-fit: cover; /* Ensures the video scales proportionally to fill the header */
