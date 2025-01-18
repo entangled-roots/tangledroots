@@ -2315,21 +2315,25 @@ input, select, textarea {
 			}
 
 			.main > .content.style1 {
-				background: url("images/bgtr.svg") top right no-repeat, url("images/bgbl.svg") bottom left no-repeat, url("images/bgbl.svg") bottom left no-repeat, url("images/overlay.png"), linear-gradient(45deg, #b39c68, #a56365, #412e4c);
-			}
-
-			.main > .content.style2 {
-				background: url("images/bgtr.svg") top right no-repeat, url("images/bgbl.svg") bottom left no-repeat, url("images/overlay.png"), linear-gradient(45deg, #384955, #655361, #85505f);
-			}
-
-			.main > .content.style3 {
-				background: url("images/bgtr.svg") top right no-repeat, url("images/bgbl.svg") bottom left no-repeat, url("images/overlay.png"), linear-gradient(45deg, #5f796b, #3a4e59, #2f394e);
-			}
-
-			.main > .content.style4 {
-				padding-top: 0;
-				background: #fff;
-			}
+				background: url("images/mountains.jpg") center center no-repeat;
+				background-size: cover; /* Ensures the image scales to cover the entire element */
+			  }
+			  
+			  .main > .content.style2 {
+				background: url("images/mountains.jpg") center center no-repeat;
+				background-size: cover;
+			  }
+			  
+			  .main > .content.style3 {
+				background: url("images/mountains.jpg") center center no-repeat;
+				background-size: cover;
+			  }
+			  
+			  .main > .content.style4 {
+				background: url("images/mountains.jpg") center center no-repeat;
+				background-size: cover;
+			  }
+			  
 
 /* Footer */
 
