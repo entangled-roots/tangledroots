@@ -2315,22 +2315,22 @@ input, select, textarea {
 			}
 
 			.main > .content.style1 {
-				background: url("../images/mountains.jpg") center center no-repeat;
+				background: url("../../images/mountains.jpg") center center no-repeat;
 				background-size: cover; /* Ensures the image scales to cover the entire element */
 			  }
 			  
 			  .main > .content.style2 {
-				background: url("../images/mountains.jpg") center center no-repeat;
+				background: url("../../images/mountains.jpg") center center no-repeat;
 				background-size: cover;
 			  }
 			  
 			  .main > .content.style3 {
-				background: url("../images/mountains.jpg") center center no-repeat;
+				background: url("../../images/mountains.jpg") center center no-repeat;
 				background-size: cover;
 			  }
 			  
 			  .main > .content.style4 {
-				background: url("../images/mountains.jpg") center center no-repeat;
+				background: url("../../images/mountains.jpg") center center no-repeat;
 				background-size: cover;
 			  }
 			  
