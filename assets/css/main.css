@@ -2578,3 +2578,16 @@ input, select, textarea {
 		border-radius: 3px; /* Slightly rounded corners for a modern look */
 		box-shadow: none; /* Remove any shadow for a flat look */
 	}
+
+
+	.leaflet-control-geocoder input {
+		background-color: #ffffff; /* Match the white container */
+		color: #000; /* Black text for readability */
+		border: none; /* Remove input-specific border */
+		outline: none; /* Remove focus outline */
+		padding: 5px; /* Add padding for better spacing */
+		font-size: 14px; /* Adjust text size */
+		width: 100%; /* Ensure the input spans the container */
+		box-sizing: border-box; /* Ensure padding doesn't exceed container width */
+	}
+	
