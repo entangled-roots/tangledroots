@@ -2603,3 +2603,9 @@ input, select, textarea {
     padding: 5px; /* Adjust padding */
     box-shadow: none; /* Remove any shadow */
 }
+
+
+.leaflet-touch .leaflet-control-geocoder {
+	min-width: 120px;
+  }
+  
