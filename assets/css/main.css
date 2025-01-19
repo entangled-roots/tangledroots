@@ -2620,8 +2620,8 @@ input, select, textarea {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
-    padding: 10px 20px;
+    background-color: rgb(191 188 188 / 60%);
+    padding: 1px 20px;
     z-index: 10;
     display: flex;
     justify-content: space-between;
@@ -2632,7 +2632,7 @@ input, select, textarea {
 .navbar a {
     color: white;
     text-decoration: none;
-    padding: 10px 20px;
+    padding: 0px 20px;
     font-size: 1.2em;
     text-transform: uppercase;
 }
@@ -2642,3 +2642,15 @@ input, select, textarea {
     border-radius: 5px;
 }
 
+/* Adjust navbar for small screens (mobile) */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column; /* Stack the navbar items vertically */
+        padding: 10px 0; /* Reduce padding on smaller screens */
+    }
+
+    .navbar a {
+        padding: 10px; /* Adjust padding for smaller screens */
+        font-size: 1em; /* Make the font size a bit smaller */
+    }
+}
