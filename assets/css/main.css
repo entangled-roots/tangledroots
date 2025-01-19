@@ -2591,3 +2591,13 @@ input, select, textarea {
 		box-sizing: border-box; /* Ensure padding doesn't exceed container width */
 	}
 	
+
+	/* Specific override for the geocoder button */
+.leaflet-control-geocoder-icon {
+    background-color: #ffffff; /* Plain white background */
+    color: #ffffff; /* Icon color */
+    border: none; /* Remove default button border */
+    border-radius: 3px; /* Add rounded corners if needed */
+    padding: 5px; /* Adjust padding */
+    box-shadow: none; /* Remove any shadow */
+}
