@@ -2540,9 +2540,13 @@ input, select, textarea {
 				margin: 1em 0 1em 0;
 			}
 
+
+			/* Main Header Section */
+
 		/* Header */
 
 			#header {
+				margin-top: 60px;
 				padding: 6em 20px 6em 20px;
 			}
 
@@ -2609,3 +2613,32 @@ input, select, textarea {
 	min-width: 120px;
   }
   
+
+  /* Navigation Bar Styles */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 10px 20px;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    text-transform: uppercase;
+}
+
+.navbar a:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+}
+
