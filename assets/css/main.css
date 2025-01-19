@@ -2653,4 +2653,30 @@ input, select, textarea {
         padding: 1px 1px; /* Adjust padding for smaller screens */
         font-size: 0.8em; /* Make the font size a bit smaller */
     }
+
+	.navbar a#map::before {
+        content: "Map"; /* Replace with 'Map' on mobile */
+    }
+
+    /* Hide the original text on mobile */
+    .navbar a#map {
+        visibility: hidden; /* Hide original text */
+    }
+	.navbar a#add::before {
+        content: "Add"; /* Replace with 'Map' on mobile */
+    }
+
+    /* Hide the original text on mobile */
+    .navbar a#add {
+        visibility: hidden; /* Hide original text */
+    }
+
+	.navbar a#kinship::before {
+        content: "Kinship"; /* Replace with 'Map' on mobile */
+    }
+
+    /* Hide the original text on mobile */
+    .navbar a#kinship {
+        visibility: hidden; /* Hide original text */
+    }
 }
