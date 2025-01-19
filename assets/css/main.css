@@ -2053,7 +2053,7 @@ input, select, textarea {
 	.dark input[type="button"],
 	.dark input[type="submit"],
 	.dark input[type="reset"],
-	.dark button,
+	.dark button:not(.leaflet-control-geocoder-icon),
 	.dark .button:not(.leaflet-control-geocoder-icon) {
 		background: rgba(255, 255, 255, 0.15);
 		box-shadow: inset 0 0 0 1px #fff;
