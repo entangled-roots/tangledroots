@@ -2646,12 +2646,12 @@ input, select, textarea {
 @media (max-width: 768px) {
     .navbar {
         padding: 1px 0; /* Reduce padding on smaller screens */
-		font-size: 0.8em;
+		font-size: 1em;
     }
 
     .navbar a {
-        padding: 1px 1px; /* Adjust padding for smaller screens */
-        font-size: 0.8em; /* Make the font size a bit smaller */
+        padding: 1px 10px; /* Adjust padding for smaller screens */
+        font-size: 1em; /* Make the font size a bit smaller */
     }
 
 	.navbar a#map::before {
