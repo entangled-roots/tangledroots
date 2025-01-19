@@ -2054,12 +2054,14 @@ input, select, textarea {
 	.dark input[type="submit"],
 	.dark input[type="reset"],
 	.dark button,
-	.dark .button {
+	.dark .button:not(.leaflet-control-geocoder-icon) {
 		background: rgba(255, 255, 255, 0.15);
 		box-shadow: inset 0 0 0 1px #fff;
 		color: #fff;
 	}
 
+
+	
 		.dark input[type="button"]:hover,
 		.dark input[type="submit"]:hover,
 		.dark input[type="reset"]:hover,
