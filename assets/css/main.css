@@ -108,8 +108,8 @@ input, select, textarea {
 		}
 
 	.dark {
-		color: #aaa;
-		color: rgba(255, 255, 255, 0.65);
+		color: #000000;
+		/*color: rgba(255, 255, 255, 0.65);*/
 	}
 
 	input, textarea, select {
@@ -2566,4 +2566,15 @@ input, select, textarea {
 					font-size: 1.25em;
 				}
 
+	}
+
+
+
+
+	.leaflet-control-geocoder {
+		background-color: #ffffff; /* Plain white background */
+		border: 1px solid #ccc; /* Subtle grey border */
+		padding: 5px; /* Adjust padding for spacing */
+		border-radius: 3px; /* Slightly rounded corners for a modern look */
+		box-shadow: none; /* Remove any shadow for a flat look */
 	}
