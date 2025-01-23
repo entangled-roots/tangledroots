@@ -2692,26 +2692,23 @@ input, select, textarea {
 
 	@media (max-width: 768px) { /* Adjust breakpoint as needed */
 		#header {
-			height: auto; /* Allow the section to expand naturally */
+			position: relative; /* Allow content stacking */
+			text-align: center;
 		}
 	
-		#background-video {
-			width: 100%;
+		#header video {
+			position: relative; /* Makes the video static (no overlap with content) */
+			width: 100%; /* Ensures the video scales to full width */
+			height: auto;
 		}
+		
 	
-		.header-content {
-			position: static; /* Remove absolute positioning */
-			transform: none; /* Reset centering */
-			text-align: center; /* Keep content centered horizontally */
-			margin-top: 0;
-			padding: 10px; /* Add padding for spacing */
-		}
-	
-		#header-description {
-			background-color: #f9f9f9; /* Optional: Add background for readability */
-			color: #333; /* Darker text for better visibility */
-			padding: 20px;
-			border-radius: 8px; /* Rounded corners */
+		#header .header-content {
+			position: static; /* Places the text in normal document flow (below the video) */
+			margin-top: 1rem; /* Adds spacing between the video and the text */
+			padding: 1rem; /* Adds some padding for better spacing on small screens */
+			background-color: #00000090; /* Optional: Add a semi-transparent background for readability */
+			color: white; /* Keep text readable */
 		}
 
 		#footer-content {
