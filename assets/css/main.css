@@ -2713,6 +2713,10 @@ input, select, textarea {
 			padding: 20px;
 			border-radius: 8px; /* Rounded corners */
 		}
+
+		#footer-content {
+			display: none; /* Completely hides the footer */
+		}
 	}
 	
 }
