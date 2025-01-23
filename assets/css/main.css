@@ -2704,11 +2704,10 @@ input, select, textarea {
 			transform: none; /* Reset centering */
 			text-align: center; /* Keep content centered horizontally */
 			margin-top: 0;
-			padding: 20px; /* Add padding for spacing */
+			padding: 10px; /* Add padding for spacing */
 		}
 	
 		#header-description {
-			margin-top: 20px; /* Space between video and header content */
 			background-color: #f9f9f9; /* Optional: Add background for readability */
 			color: #333; /* Darker text for better visibility */
 			padding: 20px;
