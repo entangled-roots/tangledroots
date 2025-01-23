@@ -2696,7 +2696,7 @@ input, select, textarea {
 		}
 	
 		#background-video {
-			height: 60vh; /* Reduce video height on mobile */
+			width: 100%;
 		}
 	
 		.header-content {
@@ -2713,10 +2713,6 @@ input, select, textarea {
 			color: #333; /* Darker text for better visibility */
 			padding: 20px;
 			border-radius: 8px; /* Rounded corners */
-		}
-	
-		footer {
-			margin-top: 20px;
 		}
 	}
 	
