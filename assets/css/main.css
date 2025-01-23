@@ -2703,6 +2703,10 @@ input, select, textarea {
 		}
 		
 	
+		#background-video {
+			width: 100%;
+
+		}
 		#header .header-content {
 			position: static; /* Places the text in normal document flow (below the video) */
 			margin-top: 1rem; /* Adds spacing between the video and the text */
