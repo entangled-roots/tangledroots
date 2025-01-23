@@ -2620,7 +2620,7 @@ input, select, textarea {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: rgb(191 188 188 / 60%);
+    background-color: rgb(rgb(182 212 237));
     padding: 1px 60px;
     z-index: 1000;
     display: flex;
