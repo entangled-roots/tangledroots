@@ -2683,7 +2683,7 @@ input, select, textarea {
 
 	#background-video {
         width: 100%;  /* Keep the video width full on mobile */
-        height: 120%; /* Increase height to make the video taller on mobile */
+        height: 160%; /* Increase height to make the video taller on mobile */
         object-fit: cover; /* Maintain the aspect ratio and crop the sides */
         object-position: center; /* Keep the video centered */
     }
