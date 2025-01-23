@@ -2681,10 +2681,43 @@ input, select, textarea {
     }
 
 
-	#background-video {
-        width: 100%;  /* Keep the video width full on mobile */
-        height: 50vh; /* Increase height to make the video taller on mobile */
-        object-fit: cover; /* Maintain the aspect ratio and crop the sides */
-        object-position: center; /* Keep the video centered */
-    }
+	/*#background-video {
+        width: 100%;  
+        height: 50vh; 
+        object-fit: cover; 
+        object-position: center; 
+    } */
+
+
+
+	@media (max-width: 768px) { /* Adjust breakpoint as needed */
+		#header {
+			height: auto; /* Allow the section to expand naturally */
+		}
+	
+		#background-video {
+			height: 60vh; /* Reduce video height on mobile */
+		}
+	
+		.header-content {
+			position: static; /* Remove absolute positioning */
+			transform: none; /* Reset centering */
+			text-align: center; /* Keep content centered horizontally */
+			margin-top: 0;
+			padding: 20px; /* Add padding for spacing */
+		}
+	
+		#header-description {
+			margin-top: 20px; /* Space between video and header content */
+			background-color: #f9f9f9; /* Optional: Add background for readability */
+			color: #333; /* Darker text for better visibility */
+			padding: 20px;
+			border-radius: 8px; /* Rounded corners */
+		}
+	
+		footer {
+			margin-top: 20px;
+		}
+	}
+	
 }
