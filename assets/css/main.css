@@ -2717,7 +2717,7 @@ input, select, textarea {
 		}
 
 		#footer-content {
-			display: none; /* Completely hides the footer */
+			display: none !important; /* Completely hides the footer */
 		}
 	}
 	
