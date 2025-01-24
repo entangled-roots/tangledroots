@@ -2699,7 +2699,7 @@ input, select, textarea {
 		#header video {
 			position: relative; /* Makes the video static (no overlap with content) */
 			width: 100%; /* Ensures the video scales to full width */
-			height: 140vh;
+			height: 100vh;
 		}
 		
 	
