@@ -2696,13 +2696,14 @@ input, select, textarea {
 			text-align: center;
 			margin: 0;
 			padding: 0;
+			background-color: #ffffff;
 		}
 	
 		#header video {
 			
 			position: relative; /* Makes the video static (no overlap with content) */
 			object-fit: cover;
-			width: 110%; /* Ensures the video scales to full width */
+			width: 100%; /* Ensures the video scales to full width */
 			height: 60vh;
 		}
 		
