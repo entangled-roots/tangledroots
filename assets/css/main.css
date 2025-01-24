@@ -2694,6 +2694,8 @@ input, select, textarea {
 		#header {
 			position: relative; /* Allow content stacking */
 			text-align: center;
+			margin: 0;
+			padding: 0;
 		}
 	
 		#header video {
