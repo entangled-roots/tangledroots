@@ -2703,6 +2703,8 @@ input, select, textarea {
 			
 			position: relative; /* Makes the video static (no overlap with content) */
 			object-fit: cover;
+			margin: 0; /* Removes any potential default margins */
+			padding: 0;
 			width: 100%; /* Ensures the video scales to full width */
 			height: 60vh;
 		}
