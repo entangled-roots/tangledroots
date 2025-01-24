@@ -2707,6 +2707,11 @@ input, select, textarea {
 			padding: 0;
 ;
 		}
+
+		#header-description {
+			background-color: rgb(165 191 211);
+
+		}
 		
 	
 		#background-video {
