@@ -2696,7 +2696,7 @@ input, select, textarea {
 			text-align: center;
 			margin: 0;
 			padding: 0;
-			background-color: #ffffff;
+			/*background-color: #ffffff;*/
 		}
 	
 		#header video {
@@ -2705,8 +2705,7 @@ input, select, textarea {
 			object-fit: cover;
 			margin: 0; /* Removes any potential default margins */
 			padding: 0;
-			width: 100%; /* Ensures the video scales to full width */
-			height: 60vh;
+;
 		}
 		
 	
