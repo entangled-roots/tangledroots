@@ -2723,7 +2723,7 @@ input, select, textarea {
 			position: static; /* Places the text in normal document flow (below the video) */
 			margin-top: 1rem; /* Adds spacing between the video and the text */
 			padding: 1rem; /* Adds some padding for better spacing on small screens */
-			background-color: #00000090; /* Optional: Add a semi-transparent background for readability */
+			background-color: #abd2da90; /* Optional: Add a semi-transparent background for readability */
 			color: white; /* Keep text readable */
 		}
 
