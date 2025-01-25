@@ -64,15 +64,12 @@ function addMarker(lat, lng, category, description, communityName, website) {
 // Update the displayed information below the map based on the visible markers within bounds
 function updateMarkerInfo() {
     const bounds = map.getBounds();
-    console.log('Map Bounds:', bounds);  // Log current map bounds
 
     const filteredMarkers = markerDetails.filter(marker => bounds.contains([marker.lat, marker.lng]));
 
-    console.log('Filtered Markers:', filteredMarkers);  // Log filtered markers to check if they match bounds
-
     // Get the container where the information will be displayed
     const container = document.getElementById('marker-info-container');
-    container.innerHTML = '';  // Clear existing content
+    container.innerHTML = ''; // Clear existing content
 
     // Display the filtered markers
     if (filteredMarkers.length > 0) {
@@ -92,6 +89,11 @@ function updateMarkerInfo() {
     }
 }
 
+// Attach the moveend event to update marker info when the map is moved or zoomed
+map.on('moveend', function() {
+    updateMarkerInfo(); // Re-filter and update marker info when the map changes
+});
+
 // Add the search bar
 L.Control.geocoder({
     geocoder: new L.Control.Geocoder.Nominatim({
@@ -104,13 +106,8 @@ L.Control.geocoder({
 })
 .on('results', function (event) {
     event.results.forEach(result => {
-        console.log('Search Result:', result); // Log the entire result object to check its structure
         if (result.bbox) {
-            console.log('Search Result Bounds:', result.bbox); // Log the bounds if they exist
             map.fitBounds(result.bbox); // Adjust map to fit the new search result bounds
-            console.log('After fitBounds:', map.getBounds());  // Log the updated map bounds
-        } else {
-            console.log('No bounds returned for this search result hmm.');
         }
 
         // Update the marker info after geocode
@@ -120,9 +117,7 @@ L.Control.geocoder({
 .on('markgeocode', function(event) {
     // This event triggers when a suggestion is clicked, and it zooms to the clicked location
     const result = event.geocode;
-    console.log('Clicked geocode result:', result);
     map.fitBounds(result.bbox); // Fit the map bounds to the clicked location
-    console.log('After clicked geocode fitBounds:', map.getBounds());
 
     // Update the marker info after geocode
     updateMarkerInfo();
