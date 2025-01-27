@@ -33,11 +33,20 @@ const herbIcon = L.icon({
     shadowSize: [41, 41]
 });
 
+const generalIcon = L.icon({
+    iconUrl: 'images/magnifyingplant.png', 
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+    shadowSize: [41, 41]
+});
+
 // Function to assign icons based on category
 function getCategoryIcon(category) {
     if (category === 'Foraging') return foragingIcon;
     if (category === 'Growing') return growingIcon;
-    return L.icon({ iconUrl: 'images/herb.png', iconSize: [25, 35] }); // Default icon
+    if (category === 'Herbalism') return herbIcon;
+    return L.icon({ iconUrl: 'images/magnifyingplant.png', iconSize: [25, 35] }); // Default icon
 }
 
 // Initialize an empty array to store marker data for later display
