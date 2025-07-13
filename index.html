@@ -1,326 +1,273 @@
 <!DOCTYPE HTML>
-<!--
-	Read Only by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
 <html>
-	<head>
-		<title>Tangled Roots</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<link rel="stylesheet" href="search.css">
+<head>
+    <title>Rooted</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 
-		<!-- Leaflet Dependencies -->
-        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MVWJ3CK38C"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-MVWJ3CK38C');
+    </script>
 
-        <!-- Leaflet Control Geocoder -->
-		<link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
-        <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="search.css" />
 
-		<!-- Favicon -->
-		<link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
-		<link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
-		<link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
-		<link rel="manifest" href="/site.webmanifest">
+    <!-- Leaflet Dependencies -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
-		<style>
-    	#map {
-        height: 80vh; /* Map height: 80% of viewport */
-        width: 90%;  /* Full-width map */
-    	}
-		</style>
-	</head>
-	<body class="is-preload">
+    <!-- Leaflet Control Geocoder -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
+    <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
 
-		<!-- Header -->
-			<section id="header"> 
-				<header>
-					<span class="image avatar"><img src="images/tangledroots3.png" alt="" /></span>
-					<h1 id="logo"><a href="#">Tangled Roots</a></h1>
-					<p>Connecting you to communities</p>
-				</header>
-				<nav id="nav">
-					<ul>
-						<li><a href="#one" class="active">Roots Community Map</a></li>
-						<li><a href="#two">Add your community</a></li>
-						<li><a href="#four">The Kinship Project </a></li>
-					</ul>
-				</nav>
-				<footer>
-					<ul class="icons">
-						<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-						<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-						<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-						<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
-						<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
-					</ul>
-				</footer>
-			</section>
+    <style>
+        #map {
+            height: 80vh;
+            width: 114%;
+            position: relative;
+            left: -7%;
+        }
+    </style>
+</head>
+<body class="is-preload">
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+    <!-- Navbar -->
+    <div class="navbar">
+        <a href="#intro">Roots Map</a>
+        <a href="#add">Add Community</a>
+        <a href="#kinship">Kinship Project</a>
+    </div>
 
-				<!-- Main -->
-					<div id="main">
+    <!-- Header -->
+    <section id="header" class="dark">
+        <video autoplay muted loop playsinline id="background-video">
+            <source src="images/IMG_0401.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="header-content">
+            <header id="header-description">
+                <h1>Rooted</h1>
+                <p>Discover communities dedicated to exploring the natural world,<br>
+                    from community gardens, conservation, to wild food initiatives and herbalism</p>
+            </header>
+            <footer id="'footer-content">
+                <a href="#map" class="button scrolly">Community Map</a>
+            </footer> 
+        </div>
+    </section>
 
-						<!-- One -->
-							<section id="one" style="background-color: #f4fff3;">
-								<div class="image main" data-position="center">
-									<img src="images/banner.jpg" alt="" />
-								</div>
-								<div class="container">
-									<header class="major">
-										<h2 style="text-align: center;">Roots Community Map</h2>
-									</header>
-									<p style="margin-bottom: 5px;"></p>We’re creating a map of communities dedicated to foraging, herbalism, permaculture, community gardening, and more—where nature’s wisdom meets grassroots connection. 
+    <!-- Community Map Section -->
+    <section id="intro" class="main">
+        <header>
+            <div class="container">
+                <h2 style="font-weight: bold;">Community Map</h2>
+                <p>Rooted are creating a map of communities dedicated to foraging, herbalism, permaculture, community gardening, and more—where nature’s wisdom meets grassroots connection. 
+                The aim is to help people easily find communities whether moving to a new city, knowing what’s going on in your current area, or visiting new places.</p>
+            </div>
+            <div class="container" style="text-align: center;">
+                <p>Look for the following icons on the map to find communities:</p>
+                <div style="display: flex; justify-content: center; gap: 40px; align-items: center;">
+                    <div style="text-align: center;">
+                        <img src="images/foraging.png" alt="Foraging Icon" style="width: 40px; height: 40px;" />
+                        <p>Foraging</p>
+                    </div>
+                    <div style="text-align: center;">
+                        <img src="images/growing.png" alt="Growing Icon" style="width: 40px;" />
+                        <p>Growing</p>
+                    </div>
+                    <div style="text-align: center;">
+                        <img src="images/herb.png" alt="Herbalism Icon" style="width: 40px; height: 40px;" />
+                        <p>Herbalism</p>
+                    </div>
+                    <div style="text-align: center;">
+                        <img src="images/magnifyingplant.png" alt="General Icon" style="width: 40px;" />
+                        <p>General</p>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="content dark style1 featured">
+            <div class="container">
+                <div class="row">
+                    <section style="width: 100%; background-color: #f4fff300">
+                        <p style="text-align: center;">Click on the icons on the map for details, or find the list version below the map.</p>
+                        <div id="map"></div>
+                        <div id="marker-info-container" style="max-height: 400px; overflow-y: auto; color: black; padding: 20px; border: 1px solid #ccc; margin: 20px auto; background-color: #ffffffa8; max-width: 100%; text-align: center; box-sizing: border-box;"></div>
+                        <style>
+                            #marker-info-container::-webkit-scrollbar {
+                                width: 22px;
+                            }
+                            #marker-info-container::-webkit-scrollbar-track {
+                                background: #f1f1f1;
+                            }
+                            #marker-info-container::-webkit-scrollbar-thumb {
+                                background: #358cef;
+                                border-radius: 10px;
+                            }
+                            #marker-info-container::-webkit-scrollbar-thumb:hover {
+                                background: #555;
+                            }
+                        </style>
+                    </section>
+                </div>
+                <div class="col-12">
+                    <footer>
+                        <a href="#add" class="button scrolly">Add a community</a>
+                    </footer>
+                </div>
+            </div>
+        </div>
+    </section>
 
-									The aim is to help people easily find communities whether moving to a new city, knowing what’s going on in your current area, or visiting new places.</p>
-								</div>
-								<!-- Add the legend for icons -->
-								<div class="container" style="text-align: center;">
-									<h4>Community types</h4>
-									<p> Look for the following icons on the map to find communities: </p>
-									<div style="display: flex; justify-content: center; gap: 40px; align-items: center;">
-										<!-- Foraging Icon -->
-										<div style="text-align: center;">
-											<img src="images/foraging.png" alt="Foraging Icon" style="width: 40px; height: auto;" />
-											<p>Foraging</p>
-										</div>
-										<!-- Growing Icon -->
-										<div style="text-align: center;">
-											<img src="images/growing.png" alt="Growing Icon" style="width: 40px; height: auto;" />
-											<p>Growing</p>
-										</div>
-										<!-- Herbalism Icon -->
-										<div style="text-align: center;">
-											<img src="images/herb.png" alt="Herbalism Icon" style="width: 40px; height: auto;" />
-											<p>Herbalism</p>
-										</div>
-									</div>
-								</div>
-							</section>
+    <!-- Add Community Section -->
+    <section id="add" class="main">
+        <header>
+            <div class="container">
+                <h2 style="font-weight: bold;">Add a community to Rooted Community Map</h2>
+                <p>We are adding to Rooted Community Map over time as new communities come under our radar. It is evolving! We also welcome you to help us grow the hub by adding communities you are part of to the map directly.</p>
+            </div>
+        </header>
+    </section>
 
-							
-							<!-- One -->
-							<!--section id="map" style="width: 100%; background-color: #d9f1c2; padding: 20px 0;">
-								<div class="container" style="width: 80%; margin: 0 auto;">
-									<iframe src="https://www.google.com/maps/d/u/0/embed?mid=1_0dBJi79H6jBgQxky5mOnUwR0JPGOd4&ehbc=2E312F&noprof=1" width="640" height="480"></iframe>
-								</div>
-							</section-->
+    <!-- Community Form -->
+    <section id="community-form" class="main">
+        <div class="content style2 featured"> 
+            <div class="container medium">
+                <form id="community-form-element">
+                    <div class="row gtr-50">
+                        <div class="col-6 col-12-mobile">
+                            <input type="text" id="community-name" placeholder="Community Name" name="community Name" required>
+                        </div>
+                        <div class="col-6 col-12-mobile">
+                            <input type="text" id="street-name" placeholder="Street Name" name="street Name" required>
+                        </div>
+                        <div class="col-6 col-12-mobile">
+                            <input type="text" id="city" placeholder="City" name="city">
+                        </div>
+                        <div class="col-6 col-12-mobile">
+                            <input type="text" id="postcode" placeholder="Postcode" name="postcode" required>
+                        </div>
+                        <div class="col-12">
+                            <textarea id="description" placeholder="Description" name="description" rows="4" required></textarea>
+                        </div>
+                        <div class="col-6 col-12-mobile">
+                            <input type="email" id="email" placeholder="Email Address (Optional)" name="email">
+                        </div>
+                        <div class="col-6 col-12-mobile">
+                            <input type="url" id="website" placeholder="Website (optional)" name="website">
+                        </div>
+                        <div class="col-12">
+                            <select id="category" name="category" required>
+                                <option value="" disabled selected>Select a category</option>
+                                <option value="Growing">Growing</option>
+                                <option value="Foraging">Foraging</option>
+                                <option value="Herbalism">Herbs</option>
+                                <option value="General">General</option>
+                            </select>
+                        </div>
+                        <div class="col-12">
+                            <ul class="actions special">
+                                <li><input type="submit" class="button" value="Submit"></li>
+                            </ul>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
 
-							<!-- Section for Roots Community Map -->
-							<section style="width: 100%; background-color: #f4fff3">
-								<p>	Click on the icons on the map for details, or find the list version below the map.  </p>
-								<style>
-									/* Center the text within the paragraph */
-									p {
-										text-align: center;
-									}
-								</style>
-								<div id="map"></div> <!-- The map will render here -->
+    <!-- Kinship Section -->
+    <section id="kinship" class="main">
+        <header>
+            <div class="container">
+                <h2 style="font-weight: bold;">The Kinship Project</h2>
+                <p>Over time Rooted will be creating videos and blogs of different communities across UK. If you would like to be involved in this project, we'd love to hear from you.</p>
+            </div>
+        </header>
+        <div class="content style4 featured">
+            <div class="container medium">
+                <form method="post" action="https://formspree.io/f/mkggpojy">
+                    <div class="row gtr-50">
+                        <div class="col-6 col-12-mobile"><input type="text" placeholder="Name" /></div>
+                        <div class="col-6 col-12-mobile"><input type="text" placeholder="Email" /></div>
+                        <div class="col-12"><textarea name="message" placeholder="Message"></textarea></div>
+                        <div class="col-12">
+                            <ul class="actions special">
+                                <li><input type="submit" class="button" value="Send Message" /></li>
+                            </ul>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
 
-								<style>
-									/* Style the map container */
-									#map {
-										width: calc(100% - 40px); /* Subtract 20px for the left and right margin */
-										height: 600px; /* Define the height (adjust as necessary) */
-										margin: 10px auto; /* 10px margin on top and bottom, auto for left and right centering */
-										display: block; /* Ensures it's treated as a block element */
-									}
-								</style>
-								<!-- The container for the descriptions will be below the map -->
-								<div id="marker-info-container" style="max-height: 400px; overflow-y: auto; padding: 20px; border: 1px solid #ccc; margin: 20px auto; background-color: #ebf4f5; max-width: 90%; text-align: center; box-sizing: border-box;">
-								</div>
-								
-								
-								<style>
-									/* Style the scrollbar */
-									#marker-info-container::-webkit-scrollbar {
-										width: 16px;  /* Adjust the width of the scrollbar */
-									}
-								
-									/* Style the scrollbar track */
-									#marker-info-container::-webkit-scrollbar-track {
-										background: #f1f1f1;  /* Light grey track */
-									}
-								
-									/* Style the scrollbar thumb */
-									#marker-info-container::-webkit-scrollbar-thumb {
-										background: #888;  /* Darker thumb */
-										border-radius: 10px;
-									}
-								
-									/* Style the scrollbar on hover */
-									#marker-info-container::-webkit-scrollbar-thumb:hover {
-										background: #555;  /* Darker when hovered */
-									}
-								</style>
-								
-								
-							</section>
+    <!-- Footer -->
+    <section id="footer">
+        <ul class="icons">
+            <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+            <li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+        </ul>
+        <div class="copyright">
+            <ul class="menu">
+                <li>&copy; Rooted. All rights reserved.</li>
+            </ul>
+        </div>
+    </section>
 
-						
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
+    <script src="script.js"></script>
 
-							<!-- Two -->
-							<section id="two" style="background-color: #f4f2fa;">
-								<div class="container">
-									<h3>Add your community to Rooted Community Map</h3>
-									<p>
-										We are adding to Rooted Community Map over time as new communities come under our radar. It is evolving! We also welcome you to help us grow the hub by adding communities you are part of to the map directly. 
-										To do so, fill in the form below. We know sometimes communities do not have fixed addresses, so we ask you make an approximation using the post code, and ideally a
-										street name too which feels relevant. Your addition will not appear immediately on the map - expect to see it in a few days!
-									</p>
-									<div style="display: flex; align-items: flex-start; gap: 20px;">
-										<div style="flex: 3; max-width: 600px; overflow-wrap: break-word;">
-											<ul class="feature-icons" style="margin: 0; padding: 0;">
-												<li style="color: #1a1c1e; white-space: normal;">
-													<span style="font-weight: bold;">1.</span> Choose the most relevant category out of herbalism, foraging, and growing.
-													Send us an email suggesting another category if you don't feel these capture your community.
-												</li>
-											</ul>
-										</div>
-										<div style="flex: 1; text-align: center;">
-											<img src="images/grow_out_map_muted.jpg" alt="Map illustration" style="max-width: 100%; height: auto; border-radius: 8px;">
-										</div>
-									</div>
-									
-									
-																<form
-										action="https://formspree.io/f/xeoopgjb"
-										method="POST"
-									>
-										<!-- Community Name -->
-										<label for="community-name">
-											Community Name:
-											<input type="text" id="community-name" name="Community Name" required>
-										</label>
+    <!-- Community Form Submission Script -->
+    <script>
+        document.getElementById('community-form-element').addEventListener('submit', async function(e) {
+            e.preventDefault();
 
-										<!-- Description -->
-										<label for="description">
-											Description:
-											<textarea id="description" name="Description" rows="4" required></textarea>
-										</label>
-								
-										<!-- Street Name -->
-										<label for="street-name">
-											Street Name:
-											<input type="text" id="street-name" name="Street Name" required>
-										</label>
+            const formData = {
+                name: document.getElementById('community-name').value.trim(),
+                street: document.getElementById('street-name').value.trim(),
+                city: document.getElementById('city').value.trim(),
+                postcode: document.getElementById('postcode').value.trim(),
+                description: document.getElementById('description').value.trim(),
+                email: document.getElementById('email').value.trim(),
+                website: document.getElementById('website').value.trim(),
+                category: document.getElementById('category').value
+            };
 
-										<!-- City -->
-										<label for="city">
-											City:
-											<input type="text" id="city" name="City">
-										</label>
+            try {
+                const response = await fetch('https://rooted-api.onrender.com/community', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(formData)
+                });
 
-										<!-- Postcode -->
-										<label for="postcode">
-											Postcode:
-											<input type="text" id="postcode" name="Postcode" required>
-										</label>
-
-										<!-- Email Address -->
-										<label for="email">
-											Email Address (optional):
-											<input type="email" id="email" name="Email Address">
-										</label>
-								
-										<!-- Website -->
-										<label for="website">
-											Website (optional):
-											<input type="url" id="website" name="Website">
-										</label>
-
-										<!-- Category -->
-										<label for="category">
-											Category:
-											<select id="category" name="Category" required>
-												<option value="" disabled selected>Select a category</option>
-												<option value="Growing">Growing</option>
-												<option value="Foraging">Foraging</option>
-												<option value="Herbs">Herbs</option>
-											</select>
-										</label>
-								
-										<!-- Submit Button -->
-										<button type="submit">Submit</button>
-									</form>
-								</div>
-							</section>
-
-
-
-
-
-						
-
-
-				
-
-						<!-- Four -->
-							<section id="four" style="background-color: #f4fff3;">
-								<div class="container">
-									<h3>The Kinship Project</h3>
-									<p>Over time we will be creating videos and blogs of different communities across UK. If you would like to be involved in this project,
-										 through showcasing your community or through content creation, we'd love to hear from you. Contact us via this form, or email us directly at tangled.roots.holly@gmail.com </p>
-									<!--form method="post" action="send_email.php">
-										<div class="row gtr-uniform">
-											<div class="col-6 col-12-xsmall"><input type="text" name="name" id="name" placeholder="Your Name" /></div>
-											<div class="col-6 col-12-xsmall"><input type="email" name="email" id="email" placeholder="Email" /></div>
-											<div class="col-12"><input type="text" name="subject" id="subject" placeholder="Community Name" /></div>
-											<div class="col-12"><textarea name="message" id="message" placeholder="Message" rows="6"></textarea></div>
-											<div class="col-12">
-												<ul class="actions">
-													<li><input type="submit" class="primary" value="Submit Community" /></li>
-													<li><input type="reset" value="Reset Form" /></li>
-												</ul>
-											</div>
-										</div>
-									</form-->
-									<form
-									action="https://formspree.io/f/mkggpojy"
-									method="POST"
-								  >
-									<label>
-									  Your email:
-									  <input type="email" name="email">
-									</label>
-									<label>
-									  Your message:
-									  <textarea name="message"></textarea>
-									</label>
-									<!-- your other form fields go here -->
-									<button type="submit">Send</button>
-								  </form>
-								</div>
-							</section>
-
-					</div>
-
-				<!-- Footer -->
-					<section id="footer">
-						<div class="container">
-							<ul class="copyright">
-								<li>&copy; Tangled Roots. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-							</ul>
-						</div>
-					</section>
-
-			</div>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-			<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
-			<script src="script.js"></script>
-
-	</body>
+                if (response.ok) {
+                    alert("Thank you! Your community has been submitted and will appear on the map soon.");
+                    document.getElementById('community-form-element').reset();
+                } else {
+                    const error = await response.json();
+                    console.error("Error:", error);
+                    alert("Oops! Something went wrong. Please try again or contact us directly.");
+                }
+            } catch (error) {
+                console.error("Error:", error);
+                alert("Network error. Please try again later.");
+            }
+        });
+    </script>
+</body>
 </html>
