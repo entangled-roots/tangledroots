@@ -53,9 +53,9 @@
             <header id="header-description">
                 <h1>Rooted</h1>
                 <p>Discover communities dedicated to exploring the natural world,<br>
-                    from community gardens, conservation projects, to wild food initiatives and herbalism. u</p>
+                    from community gardens, conservation projects, to wild food initiatives and herbalism. p</p>
             </header>
-            <footer id="footer-content">
+            <footer id="'footer-content">
                 <a href="#map" class="button scrolly">Community Map</a>
             </footer> 
         </div>
@@ -81,191 +81,161 @@
                         <p>Growing</p>
                     </div>
                     <div style="text-align: center;">
-                        <img src="images/herb.png" alt="Herbalism Icon" style="width: 40px; height: 40px;" />
-                        <p>Herbalism</p>
+                        <img src="images/permaculture.png" alt="Permaculture Icon" style="width: 40px;" />
+                        <p>Permaculture</p>
                     </div>
                     <div style="text-align: center;">
-                        <img src="images/magnifyingplant.png" alt="General Icon" style="width: 40px;" />
-                        <p>General</p>
+                        <img src="images/community-garden.png" alt="Community Garden Icon" style="width: 40px;" />
+                        <p>Community Garden</p>
+                    </div>
+                    <div style="text-align: center;">
+                        <img src="images/herbalism.png" alt="Herbalism Icon" style="width: 40px;" />
+                        <p>Herbalism</p>
                     </div>
                 </div>
             </div>
         </header>
-        <div class="content dark style1 featured">
-            <div class="container">
-                <div class="row">
-                    <section style="width: 100%; background-color: #f4fff300">
-                        <p style="text-align: center;">Click on the icons on the map for details, or find the list version below the map.</p>
-                        <div id="map"></div>
-                        <div id="marker-info-container" style="max-height: 400px; overflow-y: auto; color: black; padding: 20px; border: 1px solid #ccc; margin: 20px auto; background-color: #ffffffa8; max-width: 100%; text-align: center; box-sizing: border-box;"></div>
-                        <style>
-                            #marker-info-container::-webkit-scrollbar {
-                                width: 22px;
-                            }
-                            #marker-info-container::-webkit-scrollbar-track {
-                                background: #f1f1f1;
-                            }
-                            #marker-info-container::-webkit-scrollbar-thumb {
-                                background: #358cef;
-                                border-radius: 10px;
-                            }
-                            #marker-info-container::-webkit-scrollbar-thumb:hover {
-                                background: #555;
-                            }
-                        </style>
-                    </section>
-                </div>
-                <div class="col-12">
-                    <footer>
-                        <a href="#add" class="button scrolly">Add a community</a>
-                    </footer>
-                </div>
-            </div>
-        </div>
+
+        <div id="map"></div>
+
+        <footer id="footer">
+            <p class="copyright">&copy; Rooted. Design: HTML5 UP</p>
+        </footer>
     </section>
 
     <!-- Add Community Section -->
-    <section id="add" class="main">
-        <header>
-            <div class="container">
-                <h2 style="font-weight: bold;">Add a community to Rooted Community Map</h2>
-                <p>We are adding to Rooted Community Map over time as new communities come under our radar. It is evolving! We also welcome you to help us grow the hub by adding communities you are part of to the map directly.</p>
-            </div>
-        </header>
-    </section>
+    <section id="add" class="main special">
+        <div class="container">
+            <header class="major special">
+                <h2>Community Submission Form</h2>
+                <p>Have a community to add? Please fill out the form below. Your submission will be reviewed before going live on the map.</p>
+            </header>
 
-    <!-- Community Form -->
-    <section id="community-form" class="main">
-        <div class="content style2 featured"> 
-            <div class="container medium">
-                <form id="community-form-element">
-                    <div class="row gtr-50">
-                        <div class="col-6 col-12-mobile">
-                            <input type="text" id="community-name" placeholder="Community Name" name="name" required>
-                        </div>
-                        <div class="col-6 col-12-mobile">
-                            <input type="text" id="street-name" placeholder="Street Name" name="street" required>
-                        </div>
-                        <div class="col-6 col-12-mobile">
-                            <input type="text" id="city" placeholder="City" name="city" required>
-                        </div>
-                        <div class="col-6 col-12-mobile">
-                            <input type="text" id="postcode" placeholder="Postcode" name="postcode" required>
-                        </div>
-                        <div class="col-12">
-                            <textarea id="description" placeholder="Description" name="description" rows="4" required></textarea>
-                        </div>
-                        <div class="col-6 col-12-mobile">
-                            <input type="email" id="email" placeholder="Email Address (Optional)" name="email">
-                        </div>
-                        <div class="col-6 col-12-mobile">
-                            <input type="url" id="website" placeholder="Website (optional)" name="website">
-                        </div>
-                        <div class="col-12">
-                            <select id="category" name="category" required>
-                                <option value="" disabled selected>Select a category</option>
-                                <option value="Growing">Growing</option>
-                                <option value="Foraging">Foraging</option>
-                                <option value="Herbalism">Herbalism</option>
-                                <option value="General">General</option>
-                            </select>
-                        </div>
-                        <div class="col-12">
-                            <ul class="actions special">
-                                <li><input type="submit" class="button" value="Submit"></li>
-                            </ul>
-                        </div>
+            <form id="communityForm">
+                <div class="row gtr-uniform">
+                    <div class="col-6 col-12-xsmall">
+                        <input type="text" name="name" id="name" placeholder="Community Name" required />
                     </div>
-                </form>
-            </div>
+                    <div class="col-6 col-12-xsmall">
+                        <input type="text" name="street" id="street" placeholder="Street Address" required />
+                    </div>
+                    <div class="col-6 col-12-xsmall">
+                        <input type="text" name="postcode" id="postcode" placeholder="Postcode" required />
+                    </div>
+                    <div class="col-6 col-12-xsmall">
+                        <input type="text" name="city" id="city" placeholder="City" required />
+                    </div>
+                    <div class="col-6 col-12-xsmall">
+                        <select name="category" id="category" required>
+                            <option value="">Choose category</option>
+                            <option value="foraging">Foraging</option>
+                            <option value="growing">Growing</option>
+                            <option value="permaculture">Permaculture</option>
+                            <option value="community_garden">Community Garden</option>
+                            <option value="herbalism">Herbalism</option>
+                        </select>
+                    </div>
+                    <div class="col-6 col-12-xsmall">
+                        <input type="email" name="email" id="email" placeholder="Email Address" />
+                    </div>
+                    <div class="col-12">
+                        <textarea name="description" id="description" placeholder="Description or Comments" rows="4"></textarea>
+                    </div>
+                    <div class="col-12">
+                        <input type="text" name="website" id="website" placeholder="Website URL" />
+                    </div>
+                    <div class="col-12">
+                        <ul class="actions">
+                            <li><button type="submit" class="primary">Submit Community</button></li>
+                        </ul>
+                    </div>
+                </div>
+            </form>
+
+            <div id="formMessage"></div>
         </div>
     </section>
 
-    <!-- Kinship Section -->
+    <!-- Kinship Project Section -->
     <section id="kinship" class="main">
-        <header>
-            <div class="container">
-                <h2 style="font-weight: bold;">The Kinship Project</h2>
-                <p>Over time Rooted will be creating videos and blogs of different communities across UK. If you would like to be involved in this project, we'd love to hear from you.</p>
-            </div>
-        </header>
-        <div class="content style4 featured">
-            <div class="container medium">
-                <form method="post" action="https://formspree.io/f/mkggpojy">
-                    <div class="row gtr-50">
-                        <div class="col-6 col-12-mobile"><input type="text" placeholder="Name" /></div>
-                        <div class="col-6 col-12-mobile"><input type="text" placeholder="Email" /></div>
-                        <div class="col-12"><textarea name="message" placeholder="Message"></textarea></div>
-                        <div class="col-12">
-                            <ul class="actions special">
-                                <li><input type="submit" class="button" value="Send Message" /></li>
-                            </ul>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <section id="footer">
-        <ul class="icons">
-            <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-            <li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-        </ul>
-        <div class="copyright">
-            <ul class="menu">
-                <li>&copy; Rooted. All rights reserved.</li>
-            </ul>
+        <div class="container">
+            <header class="major special">
+                <h2>Rooted Kinship Project</h2>
+            </header>
+            <p>This site is an ongoing experiment exploring the role of kinship with nature through communal knowledge sharing. We welcome feedback and contributions from the community.</p>
         </div>
     </section>
 
     <!-- Scripts -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/jquery.scrolly.min.js"></script>
-    <script src="assets/js/browser.min.js"></script>
-    <script src="assets/js/breakpoints.min.js"></script>
-    <script src="assets/js/util.js"></script>
-    <script src="assets/js/main.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
-    <script src="script.js"></script>
-
-    <!-- Community Form Submission Script -->
     <script>
-        document.getElementById('community-form-element').addEventListener('submit', async function(e) {
+        // Initialize Leaflet Map
+        const map = L.map('map').setView([51.505, -0.09], 13);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+        }).addTo(map);
+
+        // Fetch and add markers
+        async function loadLocations() {
+            try {
+                const response = await fetch('https://location-tracker-backend-y5id.onrender.com/locations.csv');
+                const csvText = await response.text();
+                const lines = csvText.split('\n').filter(Boolean);
+                if(lines.length < 2) return;
+                const headers = lines[0].split(',');
+                for(let i=1; i<lines.length; i++) {
+                    const cols = lines[i].split(',');
+                    const lat = parseFloat(cols[11]);
+                    const lon = parseFloat(cols[12]);
+                    if(!isNaN(lat) && !isNaN(lon)) {
+                        const marker = L.marker([lat, lon]).addTo(map);
+                        marker.bindPopup(`<strong>${cols[0]}</strong><br>${cols[1]}, ${cols[2]}, ${cols[3]}<br>${cols[5]}`);
+                    }
+                }
+            } catch(e) {
+                console.error("Failed to load locations:", e);
+            }
+        }
+
+        loadLocations();
+
+        // Handle form submission
+        const form = document.getElementById('communityForm');
+        const messageDiv = document.getElementById('formMessage');
+
+        form.addEventListener('submit', async (e) => {
             e.preventDefault();
 
             const formData = {
-                name: document.getElementById('community-name').value.trim(),
-                street: document.getElementById('street-name').value.trim(),
-                city: document.getElementById('city').value.trim(),
-                postcode: document.getElementById('postcode').value.trim(),
-                description: document.getElementById('description').value.trim(),
-                email: document.getElementById('email').value.trim(),
-                website: document.getElementById('website').value.trim(),
-                category: document.getElementById('category').value
+                name: form.name.value.trim(),
+                street: form.street.value.trim(),
+                postcode: form.postcode.value.trim(),
+                city: form.city.value.trim(),
+                category: form.category.value,
+                description: form.description.value.trim(),
+                email: form.email.value.trim(),
+                website: form.website.value.trim()
             };
 
             try {
                 const response = await fetch('https://location-tracker-backend-y5id.onrender.com/community', {
                     method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(formData)
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(formData),
                 });
 
-                if (response.ok) {
-                    alert("Thank you! Your community has been submitted and will appear on the map soon.");
-                    document.getElementById('community-form-element').reset();
+                if(response.ok) {
+                    const result = await response.json();
+                    if(result.status === 'submitted') {
+                        messageDiv.textContent = "Thank you! Your submission has been received and is pending approval.";
+                        form.reset();
+                    } else {
+                        messageDiv.textContent = "Unexpected response from server.";
+                    }
                 } else {
-                    const error = await response.json();
-                    console.error("Error:", error);
-                    alert("Oops! Something went wrong. Please try again or contact us directly.");
+                    messageDiv.textContent = `Error submitting form: ${response.statusText}`;
                 }
             } catch (error) {
-                console.error("Error:", error);
-                alert("Network error. Please try again later.");
+                messageDiv.textContent = `Error submitting form: ${error.message}`;
             }
         });
     </script>
