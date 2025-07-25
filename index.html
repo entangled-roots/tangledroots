@@ -53,7 +53,7 @@
             <header id="header-description">
                 <h1>Rooted</h1>
                 <p>Discover communities dedicated to exploring the natural world,<br>
-                    from community gardens, conservation projects, to wild food initiatives and herbalism. no</p>
+                    from community gardens, conservation projects, to wild food initiatives and herbalis. o.m</p>
             </header>
             <footer id="'footer-content">
                 <a href="#map" class="button scrolly">Community Map</a>
@@ -138,7 +138,7 @@
     <section id="community-form" class="main">
         <div class="content style2 featured"> 
             <div class="container medium">
-                <form id="community-form-element" action="https://location-tracker-backend-y5id.onrender.com/community" method="POST">
+                <form id="community-form-element" action="https://location-tracker-backend-y5id.onrender.com/webhook" method="POST">
                     <div class="row gtr-50">
                         <div class="col-6 col-12-mobile">
                             <input type="text" id="community-name" placeholder="Community Name" name="community Name" required>
@@ -195,7 +195,7 @@
                     <div class="row gtr-50">
                         <div class="col-6 col-12-mobile"><input type="text" placeholder="Name" /></div>
                         <div class="col-6 col-12-mobile"><input type="text" placeholder="Email" /></div>
-                        <div class="col-12"><textarea name="message" placeholder="Message" rows="4"></textarea></div>
+                        <div class="col-12"><textarea name="message" placeholder="Message"></textarea></div>
                         <div class="col-12">
                             <ul class="actions special">
                                 <li><input type="submit" class="button" value="Send Message" /></li>
@@ -207,36 +207,67 @@
         </div>
     </section>
 
+    <!-- Footer -->
+    <section id="footer">
+        <ul class="icons">
+            <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+            <li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+        </ul>
+        <div class="copyright">
+            <ul class="menu">
+                <li>&copy; Rooted. All rights reserved.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
+    <script src="script.js"></script>
+
+    <!-- Community Form Submission Script -->
     <script>
-        document.getElementById('community-form-element').addEventListener('submit', async function (event) {
-            event.preventDefault();
+        document.getElementById('community-form-element').addEventListener('submit', async function(e) {
+            e.preventDefault();
 
-            const form = event.target;
-            const formData = new FormData(form);
-
-            // Convert FormData to URL-encoded string
-            const urlEncodedData = new URLSearchParams(formData).toString();
+            const formData = {
+                name: document.getElementById('community-name').value.trim(),
+                street: document.getElementById('street-name').value.trim(),
+                city: document.getElementById('city').value.trim(),
+                postcode: document.getElementById('postcode').value.trim(),
+                description: document.getElementById('description').value.trim(),
+                email: document.getElementById('email').value.trim(),
+                website: document.getElementById('website').value.trim(),
+                category: document.getElementById('category').value
+            };
 
             try {
-                const response = await fetch(form.action, {
+                const response = await fetch('https://rooted-api.onrender.com/community', {
                     method: 'POST',
                     headers: {
-                        'Content-Type': 'application/x-www-form-urlencoded',
+                        'Content-Type': 'application/json'
                     },
-                    body: urlEncodedData,
+                    body: JSON.stringify(formData)
                 });
 
                 if (response.ok) {
-                    alert('Your community has been submitted. Thanks!');
-                    form.reset();
+                    alert("Thank you! Your community has been submitted and will appear on the map soon.");
+                    document.getElementById('community-form-element').reset();
                 } else {
-                    alert('There was a problem submitting your community. Please try again.');
+                    const error = await response.json();
+                    console.error("Error:", error);
+                    alert("Oops! Something went wrong. Please try again or contact us directly.");
                 }
             } catch (error) {
-                alert('Error submitting form: ' + error.message);
+                console.error("Error:", error);
+                alert("Network error. Please try again later.");
             }
         });
     </script>
-
 </body>
 </html>
