@@ -1,5 +1,5 @@
 // Initialize the map
-const map = L.map('map').setView([51.4545, -2.5879], 13); // Centered on Bristol, UK
+const map = L.map('map').setView([51.4545, -2.5879], 11); // Centered on Bristol, UK
 
 // Add CartoDB Voyager tiles
 L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
