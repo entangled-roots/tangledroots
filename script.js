@@ -27,7 +27,7 @@ const growingIcon = L.icon({
 
 const herbIcon = L.icon({
     iconUrl: 'images/herb.png', 
-    iconSize: [25, 41],
+    iconSize: [25, 31],
     iconAnchor: [12, 41],
     popupAnchor: [1, -34],
     shadowSize: [41, 41]
