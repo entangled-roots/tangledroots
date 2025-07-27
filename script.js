@@ -41,11 +41,20 @@ const generalIcon = L.icon({
     shadowSize: [41, 41]
 });
 
+const convervationIcon = L.icon({
+    iconUrl: 'images/conservation.png', 
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+    shadowSize: [41, 41]
+});
+
 // Function to assign icons based on category
 function getCategoryIcon(category) {
     if (category === 'Foraging') return foragingIcon ;
     if (category === 'Growing') return growingIcon;
     if (category === 'Herbalism' ) return herbIcon;
+    if (category === 'Conservation' ) return conservationIcon;
     return L.icon({ iconUrl: 'images/magnifyingplant.png', iconSize: [25, 30] }); // Default icon
 }
 
