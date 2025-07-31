@@ -24,6 +24,6 @@ jobs:
         run: |
           git config user.name "GitHub Action"
           git config user.email "actions@github.com"
-          git add data/locations.csv
+          git add locations.csv
           git diff --cached --quiet || git commit -m "Update locations.csv from backend"
           git push origin version1
