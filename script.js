@@ -143,7 +143,7 @@ L.Control.geocoder({
 .addTo(map);
 
 // Load data from CSV and add markers dynamically
-Papa.parse('https://location-tracker-backend-y5id.onrender.com/locations.csv', {
+Papa.parse('locations.csv', {
 
     download: true,
     header: true,

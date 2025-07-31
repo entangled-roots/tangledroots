@@ -1,0 +1,25 @@
+name: Sync CSV from Backend
+
+on:
+  schedule:
+    - cron: '0 * * * *'  # Every hour
+  workflow_dispatch:      # Allow manual trigger
+
+jobs:
+  update-csv:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout frontend repo
+      uses: actions/checkout@v3
+
+    - name: Download latest locations.csv
+      run: curl -s https://location-tracker-backend-y5id.onrender.com/locations.csv -o data/locations.csv
+
+    - name: Commit and push if updated
+      run: |
+        git config user.name "GitHub Action"
+        git config user.email "actions@github.com"
+        git add data/locations.csv
+        git diff --cached --quiet || git commit -m "Update locations.csv from backend"
+        git push
