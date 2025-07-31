@@ -12,6 +12,9 @@ jobs:
     steps:
       - name: Checkout frontend repo
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0   # fetch full history for pushing
+          ref: version-1   # checkout your default branch
 
       - name: Download latest locations.csv
         run: curl -sSL https://location-tracker-backend-y5id.onrender.com/locations.csv -o locations.csv
@@ -20,6 +23,7 @@ jobs:
         run: |
           git config user.name "GitHub Action"
           git config user.email "actions@github.com"
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
           git add data/locations.csv
           git diff --cached --quiet || git commit -m "Update locations.csv from backend"
-          git push
+          git push origin version-1
