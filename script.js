@@ -11,6 +11,70 @@ const categoryListIcons = {
 // Initialize the map
 const map = L.map('map').setView([51.4545, -2.5879], 11); // Centered on Bristol, UK
 
+// Add a legend control to the map
+// Add a legend control to the map
+const legend = L.control({ position: 'bottomright' });
+
+legend.onAdd = function (map) {
+    const isDesktop = window.innerWidth >= 768;
+
+    const fontSize = isDesktop ? '16px' : '14px';
+    const iconSize = isDesktop ? '24px' : '18px';
+
+    const div = L.DomUtil.create('div', 'info legend');
+    div.style.background = 'white';
+    div.style.padding = '10px';
+    div.style.borderRadius = '8px';
+    div.style.boxShadow = '0 0 5px rgba(0,0,0,0.3)';
+    div.style.fontSize = fontSize;
+    div.style.zIndex = '1000';
+    div.style.userSelect = 'none';
+    div.style.maxWidth = isDesktop ? '100%' : '280px';
+
+    // Apply horizontal layout styles if desktop
+    if (isDesktop) {
+        div.style.position = 'absolute';
+        div.style.left = '50%';
+        div.style.transform = 'translateX(-50%)';
+        div.style.bottom = '10px';
+        div.style.display = 'flex';
+        div.style.justifyContent = 'center';
+        div.style.alignItems = 'center';
+        div.style.gap = '16px';
+        div.style.flexWrap = 'wrap';
+    }
+
+    div.innerHTML = `
+        ${Object.entries(categoryListIcons).map(([category, icon]) => `
+            <div style="display: flex; align-items: center; gap: 6px; margin: ${isDesktop ? '0' : '8px 0'};">
+                <img src="${icon}" alt="${category}" style="width: ${iconSize}; height: ${iconSize};">
+                <span>${category}</span>
+            </div>
+        `).join('')}
+    `;
+
+    return div;
+};
+
+legend.addTo(map);
+
+// Add toggle functionality
+setTimeout(() => {
+    const toggle = document.getElementById('legend-toggle');
+    const content = document.getElementById('legend-content');
+    const arrow = document.getElementById('legend-arrow');
+
+    if (toggle && content && arrow) {
+        toggle.addEventListener('click', () => {
+            const isVisible = content.style.display !== 'none';
+            content.style.display = isVisible ? 'none' : 'block';
+            arrow.innerHTML = isVisible ? '&#9660;' : '&#9650;'; // ▼ or ▲
+        });
+    }
+}, 0);
+
+
+
 // Add CartoDB Voyager tiles
 L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors & <a href="https://carto.com/">CARTO</a>',
@@ -182,3 +246,38 @@ Papa.parse('locations.csv', {
         updateMarkerInfo();
     }
 });
+
+
+// Make the legend draggable
+function makeLegendDraggable() {
+    const legendEl = document.querySelector('.custom-legend');
+    if (!legendEl) return;
+
+    let isDragging = false;
+    let offsetX, offsetY;
+
+    legendEl.addEventListener('mousedown', (e) => {
+        if (!e.target.classList.contains('drag-handle')) return;
+
+        isDragging = true;
+        offsetX = e.clientX - legendEl.getBoundingClientRect().left;
+        offsetY = e.clientY - legendEl.getBoundingClientRect().top;
+
+        document.body.style.userSelect = 'none';
+    });
+
+    document.addEventListener('mousemove', (e) => {
+        if (!isDragging) return;
+
+        legendEl.style.position = 'absolute';
+        legendEl.style.left = `${e.clientX - offsetX}px`;
+        legendEl.style.top = `${e.clientY - offsetY}px`;
+    });
+
+    document.addEventListener('mouseup', () => {
+        isDragging = false;
+        document.body.style.userSelect = '';
+    });
+}
+
+makeLegendDraggable();
