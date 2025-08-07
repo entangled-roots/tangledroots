@@ -1,3 +1,13 @@
+
+const categoryListIcons = {
+  "Foraging": "images/foraging.png",
+  "Growing": "images/growing.png",
+  "Herbalism": "images/herb.png",
+  "Conservation": "images/conservation.png",
+  "General": "images/magnifyingplant.png"
+};
+
+
 // Initialize the map
 const map = L.map('map').setView([51.4545, -2.5879], 11); // Centered on Bristol, UK
 
@@ -94,8 +104,14 @@ function updateMarkerInfo() {
         filteredMarkers.forEach(marker => {
             const listItem = document.createElement('div');
             listItem.style.marginBottom = '10px';
+
+            // Small icon image tag — adjust width/height as needed
+            const iconUrl = categoryListIcons[marker.category] || categoryListIcons["General"];
+
             listItem.innerHTML = `
-                <b>${marker.communityName}</b><br>
+                <b style="vertical-align: middle;">${marker.communityName}</b>
+                <img src="${iconUrl}" alt="${marker.category} icon" style="width:20px; height:20px; vertical-align: middle; margin-left: 8px;">
+                <br>
                 <i>${marker.description}</i><br>
                 Category: ${marker.category}<br>
                 <a href="${marker.website}" target="_blank">Visit Website</a>
