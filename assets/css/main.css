@@ -88,13 +88,15 @@ input, select, textarea {
 
 	body {
 		background: #fefefe;
-		font-family: 'Roboto', sans-serif;
-		font-weight: 300;
-		font-size: 17pt;
+		font-family: 'Nunito', sans-serif;
+		font-size: 16pt;
 		line-height: 1.75em;
 		color: #888;
 		-webkit-text-stroke: 0.1px;
 	}
+
+
+
 
 		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
 			-moz-animation: none !important;
@@ -2054,8 +2056,8 @@ input, select, textarea {
 	.dark input[type="submit"],
 	.dark input[type="reset"],
 	.dark button:not(.leaflet-control-geocoder-icon),
-	.dark .button:not(.leaflet-control-geocoder-icon) {
-		background: rgba(255, 255, 255, 0.15);
+	.dark .button:not(.leaflet-control-geocoder-icon) { 
+		background: rgb(127 156 113);
 		box-shadow: inset 0 0 0 1px #fff;
 		color: #fff;
 	}
@@ -2231,7 +2233,7 @@ input, select, textarea {
 
 		/* Header Text Box */
 		#header header {
-			background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent grey background for better readability */
+			background-color: rgba(19, 41, 13, 0.74); /* Semi-transparent grey background for better readability */
 			padding: 1em; /* Adds space inside the text box */
 			display: inline-block; /* Ensures the grey box wraps the content */
 			border-radius: 0.5em; /* Optional rounded corners for the background box */
@@ -2620,7 +2622,7 @@ input, select, textarea {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #a5bfd3;
+    background-color: #537343;
     padding: 1px 60px;
     z-index: 1000;
     display: flex;
