@@ -2615,29 +2615,31 @@ input, select, textarea {
 	min-width: 120px;
   }
   
-
-  /* Navigation Bar Styles */
+/* Navigation Bar Styles */
 .navbar {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     background-color: #537343;
-    padding: 1px 60px;
+    padding: 8px 30px; /* reduced padding */
     z-index: 1000;
     display: flex;
     justify-content: space-between;
     align-items: center;
     color: white;
+    flex-wrap: nowrap; /* prevent wrapping */
 }
 
 .navbar a {
     color: white;
     text-decoration: none;
-    padding: 0px 20px;
-    font-size: 1.2em;
+    padding: 6px 12px; /* reduced spacing */
+    font-size: 0.95em;  /* smaller font */
     text-transform: uppercase;
+    white-space: nowrap; /* prevent word wrap */
 }
+
 
 .navbar a:hover {
     background-color: rgba(255, 255, 255, 0.3);
@@ -2648,12 +2650,12 @@ input, select, textarea {
 @media (max-width: 768px) {
     .navbar {
         padding: 1px 0; /* Reduce padding on smaller screens */
-		font-size: 1em;
+		font-size: 0.8em;
     }
 
     .navbar a {
         padding: 1px 10px; /* Adjust padding for smaller screens */
-        font-size: 1em; /* Make the font size a bit smaller */
+        font-size: 0.8; /* Make the font size a bit smaller */
     }
 
 	.navbar a#map::before {
