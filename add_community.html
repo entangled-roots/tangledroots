@@ -1,0 +1,148 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Add Community - Rooted</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&display=swap" rel="stylesheet">
+
+    <link rel="icon" href="favicon.png" type="image/png">
+
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="search.css" />
+
+    <!-- Leaflet CSS if needed -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+    <style>
+      /* Inline styles for background video */
+      #background-video {
+        position: fixed; 
+        right: 0; 
+        bottom: 0; 
+        min-width: 100%; 
+        min-height: 100%; 
+        z-index: -1;
+      }
+    </style>
+</head>
+<body class="is-preload">
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <a href="index.html#intro">Roots Map</a>
+        <a href="add-community.html">Add Community</a>
+        <a href="kinship.html">Kinship Project</a>
+    </div>
+
+
+    <!-- Add Community Section -->
+    <section id="add" class="main">
+        <header>
+            <div class="container">
+                <h2 style="font-weight: bold;">Add a community to Rooted Community Map</h2>
+                <p>We are adding to Rooted Community Map over time as new communities come under our radar. It is evolving! We also welcome you to help us grow the hub by submitting communities in the form below. After review, your addition should appear on the map.</p>
+            </div>
+        </header>
+    </section>
+
+    <!-- Community Form -->
+    <section id="community-form" class="main">
+        <div class="content style2 featured"> 
+            <div class="container medium">
+                <form id="community-form-element" action="https://location-tracker-backend-y5id.onrender.com/community" method="POST">
+                    <div class="row gtr-50">
+                        <div class="col-6 col-12-mobile">
+                            <input type="text" id="community-name" placeholder="Community Name" name="community Name" required>
+                        </div>
+                        <div class="col-6 col-12-mobile">
+                            <input type="text" id="street-name" placeholder="Street Name" name="street Name" required>
+                        </div>
+                        <div class="col-6 col-12-mobile">
+                            <input type="text" id="city" placeholder="City" name="city">
+                        </div>
+                        <div class="col-6 col-12-mobile">
+                            <input type="text" id="postcode" placeholder="Postcode" name="postcode" required>
+                        </div>
+                        <div class="col-12">
+                            <textarea id="description" placeholder="Description" name="description" rows="4" required></textarea>
+                        </div>
+                        <div class="col-6 col-12-mobile">
+                            <input type="url" id="website" placeholder="Website (optional)" name="website">
+                        </div>
+                        <div class="col-12">
+                            <select id="category" name="category" required>
+                                <option value="" disabled selected>Select a category</option>
+                                <option value="Growing">Growing</option>
+                                <option value="Foraging">Foraging</option>
+                                <option value="Herbalism">Herbs</option>
+                                <option value="Conservation">Conservation</option>
+                                <option value="General">General</option>
+                            </select>
+                        </div>
+                        <div class="col-12">
+                            <ul class="actions special">
+                                <li><input type="submit" class="button" value="Submit"></li>
+                            </ul>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <section id="footer">
+        <ul class="icons">
+            <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+        </ul>
+        <div class="copyright">
+            <ul class="menu">
+                <li>&copy; Rooted. All rights reserved.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
+    <script src="script.js"></script>
+
+    <!-- Community Form Submission Script -->
+    <script>
+        document.getElementById('community-form-element').addEventListener('submit', async function (event) {
+            event.preventDefault();
+
+            const form = event.target;
+            const formData = new FormData(form);
+
+            const urlEncodedData = new URLSearchParams(formData).toString();
+
+            try {
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                    },
+                    body: urlEncodedData,
+                });
+
+                if (response.ok) {
+                    alert('Your community has been submitted. Thanks!');
+                    form.reset();
+                } else {
+                    alert('There was a problem submitting your community. Please try again.');
+                }
+            } catch (error) {
+                alert('Error submitting form: ' + error.message);
+            }
+        });
+    </script>
+
+</body>
+</html>
