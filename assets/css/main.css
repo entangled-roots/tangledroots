@@ -2205,31 +2205,44 @@ input, select, textarea {
 			/* background-position: top left, center center; */
 			/* background-repeat: repeat, no-repeat; */
 			width: 100%;
-			padding: 14em 0; /* Adjust height by changing padding */
+			padding: relative; /* Adjust height by changing padding  14em 0*/
 			text-align: center;
 			color: #fff;
 			overflow: hidden; /* Ensures the video does not overflow the container */
 		}
 
 		/* Video Background */
+		#header {
+			position: relative;
+			height: 30vh; /* Controls visible height of the video */
+			overflow: hidden; /* Hides the part of the video that overflows */
+		}
+
 		#header video {
 			position: absolute;
 			top: 0;
 			left: 0;
 			width: 100%;
-			height: auto;
-			max-height: 100%;
-			object-fit: cover; /* Ensures the video scales proportionally to fill the header */
-			z-index: -1; /* Places the video behind the content */
+			height: 100%;
+			object-fit: cover;
+			z-index: -1;
 		}
 
 		/* Text Content Overlay */
+/* Text Content Overlay */
 		#header .header-content {
-			position: relative;
-			z-index: 1; /* Ensures text content is above the video */
-			margin: 0 auto; /* Centers content horizontally */
-			text-align: center; /* Aligns text */
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			display: flex;
+			justify-content: center; /* Center horizontally */
+			align-items: center;     /* Center vertically */
+			text-align: center;
+			z-index: 1;
 		}
+
 
 		/* Header Text Box */
 		#header header {
@@ -2444,7 +2457,7 @@ input, select, textarea {
 
 			#header {
 				margin: 0 !important;
-				padding: 8em 2em 8em 2em;
+				padding: 8em 2em 6em 2em;
 			}
 
 				#header header p {
@@ -2617,11 +2630,11 @@ input, select, textarea {
   
 /* Navigation Bar Styles */
 .navbar {
-    position: fixed;
+    position: sticky;
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #537343;
+    background-color: #537343 !important;;
     padding: 8px 30px; /* reduced padding */
     z-index: 1000;
     display: flex;
@@ -2686,8 +2699,8 @@ input, select, textarea {
 
 
 	/*#background-video {
-        width: 100%;  
-        height: 50vh; 
+        width: 50%;  
+        height: 20vh; 
         object-fit: cover; 
         object-position: center; 
     } */
@@ -2720,9 +2733,12 @@ input, select, textarea {
 	
 		#background-video {
 			width: 100%;
-			height: 50vh;
-
+			height: 40vh; /* or whatever height you want */
+			object-fit: cover;
+			object-position: center;
+			display: block;
 		}
+
 		#header .header-content {
 			position: static; /* Places the text in normal document flow (below the video) */
 			margin-top: 1rem; /* Adds spacing between the video and the text */
