@@ -2709,21 +2709,22 @@ input, select, textarea {
 
 	@media (max-width: 768px) { /* Adjust breakpoint as needed */
 		#header {
-			position: relative; /* Allow content stacking */
-			text-align: center;
-			margin: 0;
-			padding: 0;
-			/*background-color: #ffffff;*/
+			position: relative;
+			padding: 1rem 1rem 2rem 1rem; /* add bottom padding to create space */
+			background-color: transparent; /* or keep your color */
+			z-index: 1; /* ensure it’s above the next section */
 		}
-	
-		#header video {
-			
-			position: relative; /* Makes the video static (no overlap with content) */
-			object-fit: cover;
-			margin: 0; /* Removes any potential default margins */
-			padding: 0;
-;
+
+		#header .header-content {
+			position: static;
+			margin-top: 1rem;
+			padding: 1rem;
+			background-color: #abd2da90;
+			color: white;
+			z-index: 2;
 		}
+	}
+
 
 		#header-description {
 			background-color: rgb(165 191 211);
