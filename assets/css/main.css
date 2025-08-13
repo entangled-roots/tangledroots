@@ -2795,3 +2795,12 @@ input, select, textarea {
     cursor: grab;
     user-select: none;
 }
+
+
+#intro .content {
+    padding-top: 10px; /* reduces space before map */
+}
+
+#intro h2 {
+    margin-top: 5px;
+}
