@@ -125,6 +125,14 @@
             const form = event.target;
             const formData = new FormData(form);
 
+            // ✅ Get the CAPTCHA token manually
+            const captchaToken = grecaptcha.getResponse();
+            if (!captchaToken) {
+                alert("Please complete the reCAPTCHA.");
+                return; // stop submission if not completed
+            }
+            formData.append("g-recaptcha-response", captchaToken);
+
             const urlEncodedData = new URLSearchParams(formData).toString();
 
             try {
@@ -139,14 +147,18 @@
                 if (response.ok) {
                     alert('Your community has been submitted. Thanks!');
                     form.reset();
+                    grecaptcha.reset(); // ✅ reset CAPTCHA for next submission
                 } else {
                     alert('There was a problem submitting your community. Please try again.');
+                    grecaptcha.reset();
                 }
             } catch (error) {
                 alert('Error submitting form: ' + error.message);
+                grecaptcha.reset();
             }
         });
     </script>
+
 
 </body>
 </html>
