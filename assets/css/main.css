@@ -2227,6 +2227,25 @@ input, select, textarea {
 			object-fit: cover;
 			z-index: -1;
 		}
+	
+
+
+
+
+		#background-video {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+
+		/* Gradient mask so the video fades out */
+		-webkit-mask-image: linear-gradient(to right, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 80%);
+		-webkit-mask-repeat: no-repeat;
+		-webkit-mask-size: cover;
+
+		mask-image: linear-gradient(to right, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 80%);
+		mask-repeat: no-repeat;
+		mask-size: cover;
+}
 
 		/* Text Content Overlay */
 /* Text Content Overlay */
@@ -2332,7 +2351,7 @@ input, select, textarea {
 			}
 
 			.main > .content.style1 {
-				background: url("../../images/gradient.jpg") center center no-repeat;
+				background:  #867b2221;
 				background-size: cover; /* Ensures the image scales to cover the entire element */
 			  }
 			  
@@ -2352,6 +2371,8 @@ input, select, textarea {
 			  }
 			  
 
+
+			  
 /* Footer */
 
 	#footer {
@@ -2753,7 +2774,7 @@ input, select, textarea {
 		}
 	}
 	
-}
+
 
 
 .custom-legend {
@@ -2803,4 +2824,87 @@ input, select, textarea {
 
 #intro h2 {
     margin-top: 5px;
+}
+
+
+
+
+
+.header-text-box {
+  position: absolute;
+  top: 50%;        /* vertically center */
+  left: 50%; /* start from the center of the section */
+  transform: translate(30%, -50%);
+  background-color: rgba(127, 182, 194, 0); /* semi-transparent black */
+  color: #15194e;
+  padding: 20px 30px;
+  max-width: 500px;
+  border-radius: 10px;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  #header {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .header-content {
+    text-align: center;
+    max-width: 90%;
+    background: none;
+    margin-top: 15px;
+  }
+  .logo-container {
+    margin-bottom: 10px;
+  }
+
+
+
+
+
+
+
+
+
+}
+
+
+.mobile-text {
+    display: none;
+}
+  
+/* Mobile: hide desktop, show mobile */
+@media screen and (max-width: 600px) {
+    .desktop-text {
+        display: none !important;
+    }
+    .mobile-text {
+        display: block !important;
+        font-size: 0.9em;
+        line-height: 1.5em;
+		margin-left: -80px;
+    }
+}
+
+/* Mobile adjustments */
+@media screen and (max-width: 600px) {
+    .header-text-box h2 {
+        font-size: 1.8em !important;   /* smaller heading */
+        margin-left: -80px;                /* align more to the left */
+    }
+
+    .header-text-box h2 span {
+        width: 120% !important;        /* scale underline proportionally */
+        height: 3px !important;        /* thinner underline */
+    }
+
+    .header-text-box p {
+        font-size: 0.8em !important;   /* smaller paragraph text */
+        margin-left: -80px;                /* align paragraph to left as well */
+    }
 }

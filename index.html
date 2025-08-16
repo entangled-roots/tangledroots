@@ -29,49 +29,73 @@
 
     <style>
         #map {
-            height: 80vh;
+            height: 2000vh;
             width: 114%;
             position: relative;
-            left: -7%;
+            
         }
     </style>
 </head>
 <body class="is-preload">
     <!-- Header -->
+
+
 <section id="header" class="dark">
-    <style>
-    .site-logo {
-      height: 100px;
-      width: auto;
-      display: block;
-      margin: 0 auto;
-    }
-
-    .logo-link {
-      display: inline-block;
-    }
-  </style>
-
-
- <div id="video-container">
-  <video autoplay muted loop playsinline id="background-video">
-    <source src="images/IMG_0401.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-</div>
-
-  <div class="header-content">
-    <header id="header-description">
-      <h1>
-        Rooted
-      </h1>
-      <p style="text-align:center">
-        Discover communities dedicated to exploring the natural world,<br>
-        from community gardens, conservation projects, to wild food initiatives and herbalism.
-      </p>
-    </header>
+  <div id="video-container">
+    <video autoplay muted loop playsinline id="background-video">
+      <source src="images/IMG_0401.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
   </div>
+
+    <div class="header-flex">
+
+
+    <!-- Text RIGHT -->
+    <div class="header-text-box">
+        <h2 style="
+            font-family: 'Playfair Display', serif;
+            font-size: 3em;
+            color: #437606;
+            letter-spacing: 1.5px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+            margin-bottom: 5px;
+            position: relative;
+            display: inline-block;
+        ">
+            Rooted
+            <span style="
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 130%;
+                height: 4px;
+                background: #437606;
+                border-radius: 2px;
+                clip-path: polygon(0 0, 85% 0, 100% 100%, 85% 100%, 0 0);
+            "></span>
+        </h2>
+
+        <p class="desktop-text">
+            Discover communities and explore the natural world, from community gardens, conservation projects, to wild food initiatives and herbalism.
+        </p>
+        <p class="mobile-text">
+            Discover nature based communities <br>
+            community gardens, conservation, <br>
+            to wild food and  herbalism
+          
+        </p>
+
+
+    </div>
+    </div>
 </section>
+
+
+
+
+
 
 
 <div class="navbar" id="main-navbar">
@@ -82,19 +106,35 @@
 
 
 
-    <!-- Community Map Section -->
-    <section id="intro" class="main">
-        <div class="content dark style1 featured">
-            <div class="container">
-                <div class="row">
-                    <section style="width: 100%; background-color: #f4fff300">
-                         <h2 style="text-align: center; font-size: 2em; color: #333; margin: 15px 0;">
-                            Community Map
-                        </h2>
-                        <div id="map"></div>
-                        <div id="marker-info-container" style="max-height: 400px; overflow-y: auto; color: black; padding: 20px; border: 1px solid #ccc; margin: 20px auto; background-color: #ffffffa8; max-width: 100%; text-align: left; box-sizing: border-box;"></div>
+<!-- Community Map Section -->
+<section id="intro" class="main">
+    <div class="content dark style1 featured">
+        <div class="container">
+            <div class="row">
+                <section style="width: 100%; background-color: #f4fff300">
+                     <h2 style="text-align: left; font-size: 2em; color: #0b4a11; margin: 5px 0;">
+                        Community Map
+                    </h2>
 
-                        <style>
+                    <!-- Flex container for map and list -->
+                    <div class="flex-container" style="display: flex; flex-wrap: nowrap; justify-content: flex-start; gap: 0; padding: 0 10px; box-sizing: border-box;">
+
+                        <!-- Map -->
+                        <div id="map" 
+                            style="flex: 6 1 0%; min-width: 300px; height: 700px; border: 2px solid #ccc; box-sizing: border-box;">
+                        </div>
+
+                        <!-- Community List -->
+                        <div id="marker-info-container" 
+                            style="flex: 2 1 0%; min-width: 250px; max-height: 700px; overflow-y: auto; 
+                                    border: 1px solid #ccc; background-color: #ffffffa8; 
+                                    padding: 10px; font-size: 1rem; box-sizing: border-box;">
+                        </div>
+
+                    </div>
+
+
+                    <style>
                         #marker-info-container::-webkit-scrollbar {
                             width: 12px;
                         }
@@ -122,8 +162,8 @@
                         }
 
                         .community-name {
-                            font-weight: 700;
-                            font-size: 1.1rem;
+                            font-weight: 700; 
+                            font-size: 1rem;
                             margin-bottom: 6px;
                             color: #111;
                         }
@@ -138,8 +178,8 @@
                             margin-bottom: 8px;
                         }
                         .community-description {
-                            font-size: 1rem;
-                            line-height: 1.4;
+                            font-size: 0.4em;
+                            line-height: 1;
                             margin-bottom: 8px;
                             color: #555;
                         }
@@ -152,10 +192,39 @@
                         .community-website:hover {
                             text-decoration: underline;
                         }
-                        </style>
 
-                    </section>
-                </div>
+                        /* Mobile: stack map + list */
+                        @media screen and (max-width: 900px) {
+                            .flex-container {
+                                flex-wrap: wrap !important;
+                                align-items: center;
+                            }
+                            #map, #marker-info-container {
+                                flex: 1 1 100% !important;
+                                min-width: 100% !important;
+                                padding-left: 0 !important;
+                                padding-right: 0 !important;
+                        
+                            }
+                                /* Make map shorter on mobile */
+                            #map {
+                                height: 500px !important;
+                                                }
+
+                             #marker-info-container {
+                                max-height: 400px !important; /* Adjust as needed */
+                                overflow-y: auto;
+                            }
+                        }
+                    </style>
+                </section>
+            </div>
+        </div>
+    </div>
+</section>
+
+            
+<section id="about" class="main">
                 <header>
                     <div class="container">
                         <h1 style="color: black; font-size: 2.2em;">About</h1>
@@ -203,7 +272,7 @@
 
 
     <!-- Footer -->
-    <section id="footer">
+    <section id="footer" style="text-align: center;">
         <ul class="icons">
             <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
         </ul>
