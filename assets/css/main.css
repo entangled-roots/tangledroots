@@ -2893,18 +2893,23 @@ input, select, textarea {
 
 /* Mobile adjustments */
 @media screen and (max-width: 600px) {
-    .header-text-box h2 {
-        font-size: 1.8em !important;   /* smaller heading */
-        margin-left: -80px;                /* align more to the left */
+    .header-text-box {
+        width: 15%;          /* make the box narrower */
+        margin-left: 22%;     /* keep it centered horizontally */
+        padding: 20px 10px;  /* give it more height with padding */
+        box-sizing: border-box;
+		text-align: center; 
     }
 
-    .header-text-box h2 span {
-        width: 120% !important;        /* scale underline proportionally */
-        height: 3px !important;        /* thinner underline */
+    .header-text-box h2 {
+        font-size: 1.8em !important;   /* slightly smaller heading */
+        line-height: 1.3em;            /* tighter line height */
     }
 
     .header-text-box p {
-        font-size: 0.8em !important;   /* smaller paragraph text */
-        margin-left: -80px;                /* align paragraph to left as well */
+        font-size: 0.9em !important;   /* smaller paragraph text */
+        line-height: 1.5em;            /* good readability */
     }
 }
+
+
