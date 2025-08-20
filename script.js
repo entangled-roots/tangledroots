@@ -9,21 +9,22 @@ const categoryListIcons = {
 
 
 // Initialize the map
-const map = L.map('map').setView([51.4545, -2.5879], 11); // Centered on Bristol, UK
+const map = L.map('map').setView([52.3555, -1.1743], 7.2); // Centered on Bristol, UK
 
-// Add a legend control to the map
+
 // Add a legend control to the map
 const legend = L.control({ position: 'bottomright' });
 
+
+
 legend.onAdd = function (map) {
     const isDesktop = window.innerWidth >= 768;
-
     const fontSize = isDesktop ? '16px' : '14px';
     const iconSize = isDesktop ? '24px' : '18px';
 
-    const div = L.DomUtil.create('div', 'info legend');
+    const div = L.DomUtil.create('div', 'custom-legend');
     div.style.background = 'white';
-    div.style.padding = '10px';
+    div.style.padding = '5px 10px';
     div.style.borderRadius = '8px';
     div.style.boxShadow = '0 0 5px rgba(0,0,0,0.3)';
     div.style.fontSize = fontSize;
@@ -31,47 +32,55 @@ legend.onAdd = function (map) {
     div.style.userSelect = 'none';
     div.style.maxWidth = isDesktop ? '100%' : '280px';
 
-    // Apply horizontal layout styles if desktop
     if (isDesktop) {
         div.style.position = 'absolute';
         div.style.left = '50%';
         div.style.transform = 'translateX(-50%)';
         div.style.bottom = '10px';
         div.style.display = 'flex';
-        div.style.justifyContent = 'center';
+        div.style.flexDirection = 'column';
         div.style.alignItems = 'center';
-        div.style.gap = '16px';
-        div.style.flexWrap = 'wrap';
     }
 
     div.innerHTML = `
+      <div class="legend-header drag-handle" style="display:flex; justify-content:space-between; align-items:center; cursor:grab; padding-bottom:2px;">
+        <span id="legend-title" style="font-weight:bold; color:#437606;">Categories</span>
+        <button id="legend-toggle" 
+                style="border:none; background:none; cursor:pointer; font-size:16px; color:#437606; padding:0; line-height:1;">–</button>
+      </div>
+      <div id="legend-content" style="margin-top:5px;">
         ${Object.entries(categoryListIcons).map(([category, icon]) => `
-            <div style="display: flex; align-items: center; gap: 6px; margin: ${isDesktop ? '0' : '8px 0'};">
-                <img src="${icon}" alt="${category}" style="width: ${iconSize}; height: ${iconSize};">
+            <div style="display:flex; align-items:center; gap:6px; margin:${isDesktop ? '0' : '5px 0'};">
+                <img src="${icon}" alt="${category}" style="width:${iconSize}; height:${iconSize};">
                 <span>${category}</span>
             </div>
         `).join('')}
+      </div>
     `;
 
     return div;
 };
 
-legend.addTo(map);
-
 // Add toggle functionality
 setTimeout(() => {
     const toggle = document.getElementById('legend-toggle');
     const content = document.getElementById('legend-content');
-    const arrow = document.getElementById('legend-arrow');
 
-    if (toggle && content && arrow) {
+    if (toggle && content) {
         toggle.addEventListener('click', () => {
             const isVisible = content.style.display !== 'none';
             content.style.display = isVisible ? 'none' : 'block';
-            arrow.innerHTML = isVisible ? '&#9660;' : '&#9650;'; // ▼ or ▲
+            toggle.innerHTML = isVisible ? '+' : '–'; // Update button symbol
         });
     }
 }, 0);
+
+
+
+legend.addTo(map);
+
+
+
 
 
 

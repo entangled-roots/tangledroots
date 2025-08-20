@@ -2817,6 +2817,13 @@ input, select, textarea {
     user-select: none;
 }
 
+.collapse-btn {
+  border: none;
+  background: none;
+  font-size: 1.2em;
+  cursor: pointer;
+}
+
 
 #intro .content {
     padding-top: 10px; /* reduces space before map */
@@ -2913,3 +2920,6 @@ input, select, textarea {
 }
 
 
+#map {
+    border: #829f73; /* a green color */
+}
