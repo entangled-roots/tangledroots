@@ -2238,11 +2238,11 @@ input, select, textarea {
 		object-fit: cover;
 
 		/* Gradient mask so the video fades out */
-		-webkit-mask-image: linear-gradient(to right, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 80%);
+		-webkit-mask-image: linear-gradient(to right, rgba(0,0,0,1) 20%, rgba(0,0,0,0) 90%);
 		-webkit-mask-repeat: no-repeat;
 		-webkit-mask-size: cover;
 
-		mask-image: linear-gradient(to right, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 80%);
+		mask-image: linear-gradient(to right, rgba(0,0,0,1) 20%, rgba(0,0,0,0) 90%);
 		mask-repeat: no-repeat;
 		mask-size: cover;
 }
@@ -2883,7 +2883,7 @@ input, select, textarea {
   line-height: 1.6em;
   margin: 0;
   color: #2e6536;
-  text-align: left;             /* keep paragraph readable */
+  text-align: center;             /* keep paragraph readable */
 }
 
 /* Mobile adjustments */
