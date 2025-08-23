@@ -2834,92 +2834,70 @@ input, select, textarea {
 }
 
 
+#map {
+    border: #829f73; /* a green color */
+}
 
 
 
 .header-text-box {
+  width: 100%;          /* full width across screen */
+  position: relative;   /* positioning context */
+  padding: 60px 0 40px; /* space for heading + paragraph */
+}
+
+/* Position Rooted relative to the right edge */
+.header-text-box h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3em;
+  color: #437606;
+  letter-spacing: 1.5px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  margin: 0;
+
+  position: absolute; 
+  right: 10%;           
+  top: 20%;             /* a little down from top */
+  transform: translateY(-20%);
+}
+
+.header-text-box h2 span {
   position: absolute;
-  top: 50%;        /* vertically center */
-  left: 50%; /* start from the center of the section */
-  transform: translate(30%, -50%);
-  background-color: rgba(127, 182, 194, 0); /* semi-transparent black */
-  color: #15194e;
-  padding: 20px 30px;
-  max-width: 500px;
-  border-radius: 10px;
-  font-size: 1rem;
-  line-height: 1.4;
+  bottom: 0;
+  left: 0;
+  width: 130%;
+  height: 4px;
+  background: #437606;
+  border-radius: 2px;
+  clip-path: polygon(0 0, 85% 0, 100% 100%, 85% 100%, 0 0);
 }
 
-
-/* Mobile adjustments */
-@media (max-width: 768px) {
-  #header {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-  }
-  .header-content {
-    text-align: center;
-    max-width: 90%;
-    background: none;
-    margin-top: 15px;
-  }
-  .logo-container {
-    margin-bottom: 10px;
-  }
-
-
-
-
-
-
-
-
-
-}
-
-
-.mobile-text {
-    display: none;
-}
-  
-/* Mobile: hide desktop, show mobile */
-@media screen and (max-width: 600px) {
-    .desktop-text {
-        display: none !important;
-    }
-    .mobile-text {
-        display: block !important;
-        font-size: 0.9em;
-        line-height: 1.5em;
-		margin-left: -80px;
-    }
+/* New: text paragraph */
+.header-text-box p {
+  position: absolute;
+  right: 10%;
+  top: 90%;                     /* sits below the heading */
+  width: 35%;  
+  right: 1%;                 /* only takes up right 30% */
+  font-size: 0.9em;
+  line-height: 1.6em;
+  margin: 0;
+  color: #333;
+  text-align: left;             /* keep paragraph readable */
 }
 
 /* Mobile adjustments */
 @media screen and (max-width: 600px) {
-    .header-text-box {
-        width: 15%;          /* make the box narrower */
-        margin-left: 22%;     /* keep it centered horizontally */
-        padding: 20px 10px;  /* give it more height with padding */
-        box-sizing: border-box;
-		text-align: center; 
-    }
-
-    .header-text-box h2 {
-        font-size: 1.8em !important;   /* slightly smaller heading */
-        line-height: 1.3em;            /* tighter line height */
-    }
-
-    .header-text-box p {
-        font-size: 0.9em !important;   /* smaller paragraph text */
-        line-height: 1.5em;            /* good readability */
-    }
+  .header-text-box h2 {
+    font-size: 2em;
+    right: 10%;
+  }
+  .header-text-box p {
+    width: 35%;                 /* wider text box on small screen */
+    font-size: 0.8em;
+    line-height: 1.5em;
+    right: 1%;
+  }
 }
 
 
-#map {
-    border: #829f73; /* a green color */
-}
