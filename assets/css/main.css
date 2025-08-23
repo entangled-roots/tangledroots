@@ -2857,7 +2857,7 @@ input, select, textarea {
 
   position: absolute; 
   right: 10%;           
-  top: 20%;             /* a little down from top */
+  top: 40%;             /* a little down from top */
   transform: translateY(-20%);
 }
 
@@ -2876,7 +2876,7 @@ input, select, textarea {
 .header-text-box p {
   position: absolute;
   right: 10%;
-  top: 90%;                     /* sits below the heading */
+  top: 120%;                     /* sits below the heading */
   width: 35%;  
   right: 1%;                 /* only takes up right 30% */
   font-size: 0.9em;
