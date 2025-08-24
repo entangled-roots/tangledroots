@@ -2893,7 +2893,8 @@ input, select, textarea {
     right: 10%;
   }
   .header-text-box p {
-    width: 35%;                 /* wider text box on small screen */
+    width: 40%; 
+	top: 85%;                /* wider text box on small screen */
     font-size: 0.8em;
     line-height: 1.5em;
     right: 1%;
