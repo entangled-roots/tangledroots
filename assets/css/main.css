@@ -247,13 +247,13 @@ input, select, textarea {
 		}
 
 /* Container */
-
 	.container {
 		margin: 0 auto;
 		max-width: 100%;
-		width: 1360px;
+		width: 100%; /* change from 1360px */
+		padding: 0 0px; /* optional small padding */
+		box-sizing: border-box;
 	}
-
 		.container.medium {
 			width: 1020px;
 		}
@@ -289,6 +289,112 @@ input, select, textarea {
 			}
 
 		}
+
+.instagram-wrapper {
+    flex: 2 1 0%;          /* behaves like your .instagram-column did */
+    min-width: 300px;
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column; /* stack text over embed */
+    gap: 10px;              /* spacing between text + Instagram */
+}
+
+.instagram-description {
+    order: 1; /* text first */
+}
+
+.instagram-column {
+    order: 2; /* embed second */
+}
+
+.desktop-only { display: block; }
+.mobile-only { display: none; }
+
+@media screen and (max-width: 900px) {
+  	.desktop-only { display: none !important; }
+  	.mobile-only { display: block !important; }
+
+    /* Section wrapper */
+    #intro .content .container section {
+        width: 100% !important;
+        margin: 0 auto !important;
+        padding: 0 5px !important;
+        border-left: 2px solid #ccc;
+        border-right: 2px solid #ccc;
+        box-sizing: border-box;
+    }
+
+    /* Flex container */
+    #intro .flex-container {
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 10px !important;
+        padding: 0 !important;
+    }
+
+    /* Flex children: map & list full-width */
+    #map, #marker-info-container {
+        flex: 1 1 100% !important;
+        min-width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 auto !important;
+        padding: 0 !important;
+        box-sizing: border-box;
+    }
+
+    #map { height: 500px !important; }
+    #marker-info-container { max-height: 400px !important; overflow-y: auto; }
+
+    /* Instagram wrapper becomes its own section */
+    .instagram-wrapper {
+        flex: 1 1 100% !important;
+        min-width: 100% !important;
+        max-width: 100% !important;
+        margin: 20px auto !important;
+        padding: 20px !important;
+        background-color: #f0f7f3; /* soft green background */
+        border-radius: 8px;
+        box-sizing: border-box;
+    }
+
+    /* Text box inside Instagram */
+    .instagram-description {
+        width: 100% !important;
+        max-width: 100% !important;
+        background: #ffffff;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        padding: 12px;
+        font-size: 0.95em;
+        line-height: 1.5em;
+        color: #333;
+        box-sizing: border-box;
+    }
+
+    /* Instagram embed */
+    .instagram-column {
+        display: block !important;
+        margin-left: 0 !important;
+        width: 100% !important;
+        box-sizing: border-box;
+    }
+
+    .instagram-column blockquote.instagram-media,
+    .instagram-column iframe {
+        display: block !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 auto !important;
+        box-sizing: border-box;
+    }
+}
+
+
+
+
+
+
+
 
 /* Row */
 
@@ -2900,5 +3006,8 @@ input, select, textarea {
     right: 1%;
   }
 }
+
+
+
 
 

@@ -96,123 +96,130 @@
 </div>
 
 
-
 <!-- Community Map Section -->
 <section id="intro" class="main">
     <div class="content dark style1 featured">
         <div class="container">
             <div class="row">
-                <section style="width: 100%; background-color: #f4fff300">
-                     <h2 style="text-align: left; font-size: 2em; color: #0b4a11; margin: 5px 0;">
+                <section style="margin: 0 auto; width: 95%; max-width: 100%; padding: px 5px; 
+                box-sizing: border-box; border-left: 2px; border-right: 2px; 
+                background-color: #f4fff300;">
+                    <h2 style="text-align: center; font-size: 2em; color: #0b4a11; margin: 20px 0;">
                         Community Map
                     </h2>
 
-                    <!-- Flex container for map and list -->
-                    <div class="flex-container" style="display: flex; flex-wrap: nowrap; justify-content: flex-start; gap: 0; padding: 0 10px; box-sizing: border-box;">
+                    <!-- Flex container for map, list, and Instagram -->
+                    <div class="flex-container" 
+                         style="display: flex; flex-wrap: nowrap; justify-content: flex-start; gap: 0; padding: 0 5px; box-sizing: border-box;">
 
                         <!-- Map -->
                         <div id="map" 
-                            style="flex: 6 1 0%; min-width: 300px; height: 700px; border: 2px solid #ccc; box-sizing: border-box;">
+                             style="flex: 6 1 0%; min-width: 300px; height: 700px; border: 2px solid #ccc; border-right: none; box-sizing: border-box;">
                         </div>
 
                         <!-- Community List -->
                         <div id="marker-info-container" 
-                            style="flex: 2 1 0%; min-width: 250px; max-height: 700px; overflow-y: auto; 
-                                    border: 1px solid #ccc; background-color: #ffffffa8; 
-                                    padding: 10px; font-size: 1rem; box-sizing: border-box;">
+                             style="flex: 2 1 0%; min-width: 250px; max-height: 700px; overflow-y: auto; border: 2px solid #ccc; border-left: none; background-color: #ffffffa8; padding: 10px; font-size: 1rem; box-sizing: border-box;">
+                        </div>
+                        <div class="instagram-wrapper desktop-only">
+                        
+                        <div class="instagram-description" 
+                            style="margin-top: 12px; padding: 10px; background: #f9f9f9; border: 1px solid #ddd; border-radius: 8px; font-size: 0.9em; line-height: 1.4em; color: #333;">
+                            <p>
+                            🌿 A closer look at one of our featured communities ....
+                            </p>
                         </div>
 
-                    </div>
+                        <div class="instagram-column">
+                            <blockquote class="instagram-media"
+                                        data-instgrm-permalink="https://www.instagram.com/p/Cq5q9SBNVdS/"
+                                        data-instgrm-version="14"
+                                        style="margin: 0 auto;">
+                            </blockquote>
+                            <script async src="//www.instagram.com/embed.js"></script>
+                        </div>
 
+                        </div>
 
-                    <style>
-                        #marker-info-container::-webkit-scrollbar {
-                            width: 12px;
-                        }
-                        #marker-info-container::-webkit-scrollbar-track {
-                            background: #eee;
-                            border-radius: 6px;
-                        }
-                        #marker-info-container::-webkit-scrollbar-thumb {
-                            background: #358cef;
-                            border-radius: 6px;
-                        }
-                        #marker-info-container::-webkit-scrollbar-thumb:hover {
-                            background: #2a6fcc;
-                        }
-
-                        /* Styling each community entry inside the list */
-                        #marker-info-container > div {
-                            border-bottom: 1px solid #e1e1e1;
-                            padding: 15px 0;
-                            margin-bottom: 15px;
-                        }
-                        #marker-info-container > div:last-child {
-                            border-bottom: none;
-                            margin-bottom: 0;
-                        }
-
-                        .community-name {
-                            font-weight: 700; 
-                            font-size: 1rem;
-                            margin-bottom: 6px;
-                            color: #111;
-                        }
-                        .community-category {
-                            font-size: 0.85rem;
-                            font-weight: 600;
-                            color: #358cef;
-                            background: #e7f0fd;
-                            padding: 3px 10px;
-                            border-radius: 15px;
-                            display: inline-block;
-                            margin-bottom: 8px;
-                        }
-                        .community-description {
-                            font-size: 0.4em;
-                            line-height: 1;
-                            margin-bottom: 8px;
-                            color: #555;
-                        }
-                        .community-website {
-                            color: #358cef;
-                            font-weight: 600;
-                            font-size: 0.9rem;
-                            text-decoration: none;
-                        }
-                        .community-website:hover {
-                            text-decoration: underline;
-                        }
-
-                        /* Mobile: stack map + list */
-                        @media screen and (max-width: 900px) {
-                            .flex-container {
-                                flex-wrap: wrap !important;
-                                align-items: center;
-                            }
-                            #map, #marker-info-container {
-                                flex: 1 1 100% !important;
-                                min-width: 100% !important;
-                                padding-left: 0 !important;
-                                padding-right: 0 !important;
-                        
-                            }
-                                /* Make map shorter on mobile */
-                            #map {
-                                height: 500px !important;
-                                                }
-
-                             #marker-info-container {
-                                max-height: 400px !important; /* Adjust as needed */
-                                overflow-y: auto;
-                            }
-                        }
-                    </style>
+                    </div> 
                 </section>
             </div>
         </div>
     </div>
 </section>
+
+<!-- Instagram Feature Section (mobile only) -->
+<section id="instagram-feature" class="main mobile-only">
+  <div class="container">
+    <h2 style="text-align:center; font-size:2em; color:#0b4a11; margin: 20px 0;"> Featured Community</h2>
+    <div class="instagram-wrapper">
+      <div class="instagram-description">
+        <p>
+          🌿 A closer look at one of our featured communities ....
+        </p>
+      </div>
+      <div class="instagram-column">
+        <blockquote class="instagram-media"
+                    data-instgrm-permalink="https://www.instagram.com/p/Cq5q9SBNVdS/"
+                    data-instgrm-version="14"
+                    style="margin: 0 auto;">
+        </blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CSS -->
+<style>
+    /* Container fluid */
+    .container {
+        margin: 0 auto;
+        width: 100%;
+        max-width: 100%;
+        padding: 0 5px;
+        box-sizing: border-box;
+    }
+
+    /* Scrollbar for community list */
+    #marker-info-container::-webkit-scrollbar {
+        width: 12px;
+    }
+    #marker-info-container::-webkit-scrollbar-track {
+        background: #eee;
+        border-radius: 6px;
+    }
+    #marker-info-container::-webkit-scrollbar-thumb {
+        background: #358cef;
+        border-radius: 6px;
+    }
+    #marker-info-container::-webkit-scrollbar-thumb:hover {
+        background: #2a6fcc;
+    }
+
+    /* Community list styling */
+    #marker-info-container > div {
+        border-bottom: 1px solid #e1e1e1;
+        padding: 15px 0;
+        margin-bottom: 15px;
+    }
+    #marker-info-container > div:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+    }
+    .community-name { font-weight:700; font-size:1rem; margin-bottom:6px; color:#101010; }
+    .community-category { font-size:0.85rem; font-weight:600; color:#358cef; background:#e7f0fd; padding:3px 10px; border-radius:15px; display:inline-block; margin-bottom:8px; }
+    .community-description { font-size:0.9rem; line-height:1.2; margin-bottom:8px; color:#555; }
+    .community-website { color:#358cef; font-weight:600; font-size:0.9rem; text-decoration:none; }
+    .community-website:hover { text-decoration:underline; }
+
+</style>
+
+                </section>
+            </div>
+        </div>
+    </div>
+</section>
+
 
             
 <section id="about" class="main">

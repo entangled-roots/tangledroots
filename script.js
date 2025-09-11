@@ -182,13 +182,14 @@ function updateMarkerInfo() {
             const iconUrl = categoryListIcons[marker.category] || categoryListIcons["General"];
 
             listItem.innerHTML = `
-                <b style="vertical-align: middle;">${marker.communityName}</b>
-                <img src="${iconUrl}" alt="${marker.category} icon" style="width:20px; height:20px; vertical-align: middle; margin-left: 8px;">
-                <br>
-                <i>${marker.description}</i><br>
-                Category: ${marker.category}<br>
-                <a href="${marker.website}" target="_blank">Visit Website</a>
+                <div class="community-entry">
+                    <div class="community-name">${marker.communityName}</div>
+                    <img src="${iconUrl}" alt="${marker.category} icon" style="width:20px;height:20px;margin-left:8px;">
+                    <div class="community-description">${marker.description}</div>
+                    <a class="community-website" href="${marker.website}" target="_blank">Visit Website</a>
+                </div>
             `;
+
             container.appendChild(listItem);
         });
     } else {
