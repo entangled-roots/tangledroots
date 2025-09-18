@@ -301,7 +301,21 @@ input, select, textarea {
 
 .instagram-description {
     order: 1; /* text first */
+	animation: gentleGlow 6s infinite; /* repeat every few seconds */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
+
+  
+  @keyframes gentleGlow {
+	0%, 100% {
+	  text-shadow: 0 0 0px rgba(129, 249, 147, 0.95); /* no glow */
+	}
+	50% {
+	  text-shadow: 0 0 14px rgba(48, 232, 32, 0.879); /* soft green glow */
+	}
+  }
+  
 
 .instagram-column {
     order: 2; /* embed second */
@@ -2979,6 +2993,32 @@ input, select, textarea {
   border-radius: 2px;
   clip-path: polygon(0 0, 85% 0, 100% 100%, 85% 100%, 0 0);
 }
+
+
+.shimmer {
+	display: inline-block;
+	position: relative;
+	font-weight: bold;
+	background: linear-gradient(
+	  90deg,
+	  #437606 0%,                  /* main dark green */
+	  #437606 45%,
+	  rgba(150, 200, 100, 0.15) 50%, /* subtle lighter green shimmer */
+	  #437606 55%,
+	  #437606 100%
+	);
+	background-size: 200% auto;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	animation: shimmerMove 12s ease-in-out infinite;
+  }
+  
+  @keyframes shimmerMove {
+	0%   { background-position: 200% center; }
+	100% { background-position: -200% center; }
+  }
+  
+  
 
 /* New: text paragraph */
 .header-text-box p {
