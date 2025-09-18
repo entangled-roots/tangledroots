@@ -292,7 +292,7 @@ input, select, textarea {
 
 .instagram-wrapper {
     flex: 2 1 0%;          /* behaves like your .instagram-column did */
-    min-width: 300px;
+    min-width: 326px;
     margin-left: 20px;
     display: flex;
     flex-direction: column; /* stack text over embed */
@@ -355,6 +355,7 @@ input, select, textarea {
         background-color: #f0f7f3; /* soft green background */
         border-radius: 8px;
         box-sizing: border-box;
+
     }
 
     /* Text box inside Instagram */
@@ -369,6 +370,7 @@ input, select, textarea {
         line-height: 1.5em;
         color: #333;
         box-sizing: border-box;
+	
     }
 
     /* Instagram embed */
