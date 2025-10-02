@@ -123,29 +123,68 @@
                              style="flex: 2 1 0%; min-width: 250px; max-height: 700px; overflow-y: auto; border: 2px solid #ccc; border-left: none; background-color: #ffffffa8; padding: 10px 10px; font-size: 1rem; box-sizing: border-box;">
                         </div>
                         <div class="instagram-wrapper desktop-only">
-                        
-                        <div class="instagram-description" 
-                            style="margin-top: 12px; padding: 10px; background: #f9f9f9; border: 1px solid #ddd; border-radius: 8px; font-size: 0.9em; line-height: 1.4em; color: #333;">
-                            <p>
-                            🌿 This weeks featured community: Are you based in or visiting Sheffield? Check out volunteering opportunities
-                            at Woodseats Community Garden.
-                            </p>
-                        </div>
 
-                        <div class="instagram-column">
-                            <blockquote class="instagram-media"
-                            data-instgrm-permalink="https://www.instagram.com/p/DL-TLSFiZK2/"
-                            data-instgrm-version="14"
-                            style="margin: 0 auto;">
-                            <a href="https://www.instagram.com/p/DL-TLSFiZK2/" target="_blank">
-                                View this post on Instagram
-                            </a>
-                            </blockquote>
+                            <div class="instagram-description" 
+                                style="margin-top: 12px; padding: 10px; background: #f9f9f9; border: 1px solid #ddd; border-radius: 8px; font-size: 0.9em; line-height: 1.4em; color: #333;">
+                                <p>
+                                🌿 This weeks featured community: Are you based in or visiting Sheffield? Check out volunteering opportunities
+                                at Woodseats Community Garden.
+                                </p>
+                            </div>
+                            <div class="scroll-btn left">&#10094;</div>
+                            <div class="scroll-btn right">&#10095;</div>
+                        
+                            <div class="instagram-carousel">
+                                <div class="instagram-track">
+                        
+                                    <!-- Post 1 -->
+                                    <div class="instagram-column">
+                                        <blockquote class="instagram-media"
+                                            data-instgrm-permalink="https://www.instagram.com/p/DL-TLSFiZK2/"
+                                            data-instgrm-version="14"
+                                            style="margin:0 auto;">
+                                            <a href="https://www.instagram.com/p/DL-TLSFiZK2/" target="_blank">View this post on Instagram</a>
+                                        </blockquote>
+                                    </div>
+                        
+                                    <!-- Post 2 -->
+                                    <div class="instagram-column">
+                                        <blockquote class="instagram-media"
+                                            data-instgrm-permalink="https://www.instagram.com/p/DOWODELjZYP/"
+                                            data-instgrm-version="14"
+                                            style="margin:0 auto;">
+                                            <a href="https://www.instagram.com/p/DOWODELjZYP/" target="_blank">View this post on Instagram</a>
+                                        </blockquote>
+                                    </div>
+                        
+                                    <!-- Add more posts as needed -->
+                        
+                                </div>
+                            </div>
+                        
                             <script async src="//www.instagram.com/embed.js"></script>
+                            <script>
+                                document.addEventListener("DOMContentLoaded", () => {
+                                  const carousel = document.querySelector(".instagram-carousel");
+                                  if (!carousel) return;
+                                
+                                  // Wait until Instagram embeds finish loading
+                                  setTimeout(() => {
+                                    // Scroll "peek" 180px to the right
+                                    carousel.scrollBy({ left: 200, behavior: "smooth" });
+                                
+                                    // Return to start after 1 second
+                                    setTimeout(() => {
+                                      carousel.scrollBy({ left: -200, behavior: "smooth" });
+                                    }, 1000);
+                                
+                                  }, 8000); // 5000ms = 5 seconds delay
+                                });
+                                </script>
+                                
                         
                         </div>
-
-                        </div>
+                        
 
                     </div> 
                 </section>
@@ -156,25 +195,131 @@
 
 <!-- Instagram Feature Section (mobile only) -->
 <section id="instagram-feature" class="main mobile-only">
-  <div class="container">
-    <h2 style="text-align:center; font-size:2em; color:#0b4a11; margin: 20px 0;"> Featured Community</h2>
-    <div class="instagram-wrapper">
-      <div class="instagram-description" style="background-color: #eaf6ea; border: none; padding: 0px; border-radius: 8px; color: #0b4a11;"></div>
+    <div class="container">
+      <h2 style="text-align:center; font-size:2em; color:#0b4a11; margin: 20px 0;">
+        Featured Community
+      </h2>
+  
+      <div class="instagram-description" style="background-color: #eaf6ea; border: none; padding: 16px; border-radius: 8px; color: #0b4a11;">
         <p>
-          🌿 This weeks featured community: Are you based in or visiting Sheffield? Check out volunteering opportunities
+          🌿 This week's featured community: Are you based in or visiting Sheffield? Check out volunteering opportunities
           at Woodseats Community Garden.
         </p>
       </div>
-      <div class="instagram-column">
-        <blockquote class="instagram-media"
-                    data-instgrm-permalink="https://www.instagram.com/p/DL-TLSFiZK2/"
-                    data-instgrm-version="14"
-                    style="margin: 0 auto;">
-        </blockquote>
+  
+<!-- Scrollable Instagram Posts MOBILE -->
+<div style="padding-top: 20px;">
+
+    <!-- Caption above -->
+    <div style="font-size: 14px; font-weight: 500; color: #2e7d32; text-align: center; margin-bottom: 6px;">
+      👉 Scroll for the next community
+    </div>
+  
+    <!-- Scroll wrapper (needed for arrow positioning) -->
+    <div class="instagram-scroll-wrapper">
+      <div class="instagram-scroll" id="instaScroll">
+        
+        <!-- Post 1 -->
+        <div class="instagram-column">
+          <blockquote class="instagram-media" 
+            data-instgrm-permalink="https://www.instagram.com/p/DL-TLSFiZK2/" 
+            data-instgrm-version="14"></blockquote>
+        </div>
+  
+        <!-- Post 2 -->
+        <div class="instagram-column">
+          <blockquote class="instagram-media" 
+            data-instgrm-permalink="https://www.instagram.com/p/DOWODELjZYP/" 
+            data-instgrm-version="14"></blockquote>
+        </div>
+  
       </div>
+  
+      <!-- Little arrow indicator -->
+      <div class="scroll-arrow">➜</div>
     </div>
   </div>
-</section>
+  
+  <style>
+  /* Wrapper positions arrow relative to scrollbar */
+  .instagram-scroll-wrapper {
+    position: relative;
+  }
+  
+  /* Scroll container */
+  .instagram-scroll {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    padding-bottom: 16px; /* space for scrollbar */
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth; /* smooth animations */
+  }
+  
+  /* Each Instagram card */
+  .instagram-column {
+    flex: 0 0 auto;
+    min-width: 320px;
+    max-width: 540px;
+  }
+  
+  /* Custom green scrollbar (Webkit) */
+  .instagram-scroll::-webkit-scrollbar {
+    height: 8px;
+  }
+  .instagram-scroll::-webkit-scrollbar-track {
+    background: #e8f5e9;
+  }
+  .instagram-scroll::-webkit-scrollbar-thumb {
+    background-color: #2e7d32;
+    border-radius: 4px;
+  }
+  
+  /* Firefox scrollbar */
+  .instagram-scroll {
+    scrollbar-width: thin;
+    scrollbar-color: #2e7d32 #e8f5e9;
+  }
+  
+  /* Arrow overlay */
+  .scroll-arrow {
+    position: absolute;
+    right: 4px;
+    bottom: 4px;
+    font-size: 14px;
+    color: #2e7d32;
+    pointer-events: none;
+  }
+  </style>
+  
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const scrollContainer = document.getElementById("instaScroll");
+      let lastTriggerTime = 0;
+      const cooldown = 2000; // ms between peeps
+    
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const now = Date.now();
+            if (now - lastTriggerTime > cooldown) {
+              lastTriggerTime = now;
+    
+              // "peep" animation: nudge right then back
+              scrollContainer.scrollBy({ left: 180, behavior: "smooth" });
+              setTimeout(() => {
+                scrollContainer.scrollBy({ left: -180, behavior: "smooth" });
+              }, 1800);
+            }
+          }
+        });
+      }, { threshold: 0.5 });
+    
+      observer.observe(scrollContainer);
+    });
+    </script>
+  
+  
 
 <!-- CSS -->
 <style>
@@ -306,6 +451,23 @@
     <script src="assets/js/main.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
     <script src="script.js"></script>
+
+    <script>
+        const carousel = document.querySelector('.instagram-carousel');
+        const btnLeft = document.querySelector('.scroll-btn.left');
+        const btnRight = document.querySelector('.scroll-btn.right');
+        
+        const scrollAmount = 320; // pixels per click (slightly more than column width)
+        
+        btnLeft.addEventListener('click', () => {
+            carousel.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+        });
+        
+        btnRight.addEventListener('click', () => {
+            carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        });
+        </script>
+        
 
 
 

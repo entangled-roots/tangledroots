@@ -306,6 +306,51 @@ input, select, textarea {
 	-moz-osx-font-smoothing: grayscale;
 }
 
+.instagram-carousel {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding: 10px 0;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Firefox */
+}
+
+.instagram-carousel::-webkit-scrollbar {
+    display: none; /* Chrome, Edge, Safari */
+}
+
+
+.instagram-wrapper.desktop-only .scroll-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    background: rgba(67,118,6,0.3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 3;
+    transition: background 0.2s;
+}
+
+
+.instagram-wrapper.desktop-only .scroll-btn:hover {
+    background: rgba(67,118,6,0.6);
+}
+
+.instagram-wrapper.desktop-only .scroll-btn.left { left: 5px; }
+.instagram-wrapper.desktop-only .scroll-btn.right { right: 5px; }
+
+
+.instagram-track {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
   
   @keyframes gentleGlow {
 	0%, 100% {
@@ -359,6 +404,10 @@ input, select, textarea {
     #map { height: 500px !important; }
     #marker-info-container { max-height: 400px !important; overflow-y: auto; }
 
+
+
+
+	  
     /* Instagram wrapper becomes its own section */
     .instagram-wrapper {
         flex: 1 1 100% !important;
